@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ "$#" -lt 2 ];
+then
+    echo "Usage: dups-from <dups> <cdx>..."
+    echo "To read <cdx> from standard input, use \"-\" as a filename."
+    echo 
+    echo "Extract the lines from <dups> that come from the <cdx>... files"
+    echo 
+    exit 1;
+fi
+
+dups=$1
+shift
+
+cat $@ | awk '{ print $1 " sha1:" $6 " " $2 }' | cat - ${dups} | sort | uniq -d

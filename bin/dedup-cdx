@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+if [ "$#" -eq 0 ];
+then
+    echo "Usage: dedup-cdx <cdx>..."
+    echo "To read from standard input, use \"-\" as a filename."
+    echo 
+    echo "Finds duplicate records in a set of CDX files and outputs them "
+    echo "in a format suitable for use with NutchWAX tools."
+    echo 
+    echo "Duplicate records are found by sorting all the CDX records, then"
+    echo "comparing subsequent records by URL+digest."
+    echo 
+    echo "Output is in abbreviated form of \"URL digest date arcname\", ex:"
+    echo 
+    echo "  example.org sha1:H4NTDLP5DNH6KON63ZALKEV5ELVUDGXJ 20070208173443 foo.arc.gz"
+    echo "  example.org sha1:H4NTDLP5DNH6KON63ZALKEV5ELVUDGXJ 20080626121505 bar.arc.gz"
+    echo 
+    echo "The output of this script can be used as an exclusions file for"
+    echo "importing ARC files with NutchWAX, and also for adding dates"
+    echo "to a parallel index."
+    echo 
+    echo "NOTE: This script uses Unix 'sort' binary.  If you wish to use a different"
+    echo "implementation, specify it via the SORT shell variable, e.g.:"
+    echo 
+    echo "  SORT=my_cool_sort dedup-cdx file1.cdx"
+    echo 
+    exit 1;
+fi
+
+# Use Unix 'sort', unless over-ridden by caller.
+if [ -z "$SORT" ]; then
+  SORT=sort
+fi
+
+cat $@ | awk '{ print $1, "sha1:" $6, $2, $9 }' | $SORT -u | awk '{ if ( url == $1 && digest == $2 ) print $1, $2, $3, $4 ; url = $1 ; digest = $2 }'

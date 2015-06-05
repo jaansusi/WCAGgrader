@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+      <base href="http://www.jarvakandi.ee/index.php/component/mailto/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Järvakandi Vald - Tere tulemast klaasipealinna!" />
+  <title></title>
+  <link href="/templates/sj_plus/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/asset/bootstrap/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/asset/animate/animate.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/asset/fonts/awesome/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/asset/fonts/socialico/font-socialico.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/css/template-blue.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/css/bonus-page.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/css/your_css.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/css/pattern.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/asset/bootstrap/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/sj_plus/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/system/ytshortcodes/assets/css/shortcodes.css" type="text/css" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script><script type="text/javascript">
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+  </script>
+  <script type="text/javascript">
+	var TMPL_NAME = "sj_plus";
+	var TMPL_COOKIE = ["direction","fontSize","fontName","templateColor","bgcolor","linkcolor","textcolor","header-bgimage","header-bgcolor","spotlight5-bgcolor","footer-bgcolor","footer-bgimage","templateLayout","menustyle","googleWebFont","activeNotice"];
+
+	function MobileRedirectUrl(){
+	  window.location.href = document.getElementById("yt-mobilemenu").value;
+	}
+</script>
+
+    <!-- Suport IE8: media query, html5 -->
+<!--[ if lt IE 9]>
+<script src="http://www.jarvakandi.ee/templates/sj_plus/js/respond.min.js" type="text/javascript"></script>
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </ script>
+<[endif] -->
+
+	
+<script language="javascript" charset="utf-8" type="text/javascript" src="http://www.jarvakandi.ee/plugins/system/yt/includes/libs/minify/?f=templates/sj_plus/js/jquery.min.js,templates/sj_plus/js/jquery-noconflict.js,templates/sj_plus/asset/bootstrap/js/bootstrap.min.js,templates/sj_plus/js/yt-script.js,templates/sj_plus/js/prettify.js,templates/sj_plus/js/yt-extend.js,plugins/system/ytshortcodes/assets/js/shortcodes.js,templates/sj_plus/js/modernizr.min.js"></script>
+</head>
+<body class="contentpane">
+	
+<div id="system-message-container">
+</div>
+	<script type="text/javascript">
+	Joomla.submitbutton = function(pressbutton) {
+		var form = document.getElementById('mailtoForm');
+
+		// do field validation
+		if (form.mailto.value == "" || form.from.value == "") {
+			alert('Palun sisesta korrektne e-posti aadress.');
+			return false;
+		}
+		form.submit();
+	}
+</script>
+
+<div id="mailto-window">
+	<h2>
+		Saada see link oma sõbrale.	</h2>
+	<div class="mailto-close">
+		<a href="javascript: void window.close()" title="Sulge aken">
+		 <i class="icon-remove"> </i></a>
+	</div>
+
+	<form action="http://www.jarvakandi.ee/index.php" id="mailtoForm" method="post">
+		<div class="formelm">
+			<label for="mailto_field">Saaja</label>
+			<input type="text" id="mailto_field" name="mailto" class="inputbox" size="25" value=""/>
+		</div>
+		<div class="formelm">
+			<label for="sender_field">
+			Sinu nimi</label>
+			<input type="text" id="sender_field" name="sender" class="inputbox" value="" size="25" />
+		</div>
+		<div class="formelm">
+			<label for="from_field">
+			Sinu e-post</label>
+			<input type="text" id="from_field" name="from" class="inputbox" value="" size="25" />
+		</div>
+		<div class="formelm">
+			<label for="subject_field">
+			Pealkiri</label>
+			<input type="text" id="subject_field" name="subject" class="inputbox" value="" size="25" />
+		</div>
+		<p>
+			<button class="button button" onclick="return Joomla.submitbutton('send');">
+				Saada			</button>
+			<button class="button button" onclick="window.close();return false;">
+				Loobu			</button>
+		</p>
+		<input type="hidden" name="layout" value="default" />
+		<input type="hidden" name="option" value="com_mailto" />
+		<input type="hidden" name="task" value="send" />
+		<input type="hidden" name="tmpl" value="component" />
+		<input type="hidden" name="link" value="25ec100ba58933f41daf5c9e61c6628ee813850d" />
+		<input type="hidden" name="d595c1e5958328393758797743a5a36b" value="1" />
+	</form>
+</div>
+
+<script language="javascript" type="text/javascript">
+						function jSelectShortcode(text) {
+							jQuery("#yt_shorcodes").removeClass("open");
+							text = text.replace(/'/g, '"');
+							if(document.getElementById('jform_articletext') != null) {
+								jInsertEditorText(text, 'jform_articletext');
+							}
+							if(document.getElementById('text') != null) {
+								jInsertEditorText(text, 'text');
+							}
+							if(document.getElementById('jform_description') != null) {
+								jInsertEditorText(text, 'jform_description');
+							}
+							if(document.getElementById('jform_content') != null) {
+								jInsertEditorText(text, 'jform_content');
+							}
+							if(document.getElementById('product_desc') != null) {
+								jInsertEditorText(text, 'product_desc');
+							}
+							SqueezeBox.close();
+						}
+				   </script></body>
+</html>
+
+
+
+
+

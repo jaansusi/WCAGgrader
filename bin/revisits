@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ "$#" -eq 0 ];
+then
+    echo "Usage: revisits <cdx>..."
+    echo 
+    echo "Extract revisit records from a CDX file."
+    echo "Normally only CDX's generated from WARCs will have revisit records."
+    exit 1;
+fi
+
+cat $@ | awk '{ if ( $9 == "-" ) print $1 " sha1:" $6 " " $2 }' | sort -u

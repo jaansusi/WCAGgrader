@@ -1,0 +1,246 @@
+2015-06-05 12:15:51,415 INFO  plugin.PluginRepository - Plugins: looking in: /home/jaan/nutchwax-0.13/plugins
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - Plugin Auto-activation mode: [true]
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - Registered Plugins:
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - 	Html Parse Plug-in (parse-html)
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - 	HTTP Framework (lib-http)
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - 	the nutch core extension points (nutch-extensionpoints)
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - 	NutchWAX Query Filter (query-nutchwax)
+2015-06-05 12:15:51,584 INFO  plugin.PluginRepository - 	JavaScript Parser (parse-js)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	NutchWAX URL Filter (urlfilter-nutchwax)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Text Parse Plug-in (parse-text)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	NutchWAX Scoring Filter (scoring-nutchwax)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	CyberNeko HTML Parser (lib-nekohtml)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Basic Query Filter (query-basic)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Basic Summarizer Plug-in (summary-basic)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Pdf Parse Plug-in (parse-pdf)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Http Protocol Plug-in (protocol-http)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	HTML Raw Parse (parse-htmlraw)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	NutchWAX Indexing Filter (index-nutchwax)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - Registered Extension-Points:
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Search Results Response Writer (org.apache.nutch.searcher.response.ResponseWriter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	HTML Parse Filter (org.apache.nutch.parse.HtmlParseFilter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Summarizer (org.apache.nutch.searcher.Summarizer)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Online Search Results Clustering Plugin (org.apache.nutch.clustering.OnlineClusterer)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Field Filter (org.apache.nutch.indexer.field.FieldFilter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Indexing Filter (org.apache.nutch.indexer.IndexingFilter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Analysis (org.apache.nutch.analysis.NutchAnalyzer)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Content Parser (org.apache.nutch.parse.Parser)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch URL Filter (org.apache.nutch.net.URLFilter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Nutch Query Filter (org.apache.nutch.searcher.QueryFilter)
+2015-06-05 12:15:51,585 INFO  plugin.PluginRepository - 	Ontology Model Loader (org.apache.nutch.ontology.Ontology)
+2015-06-05 12:15:51,591 INFO  plugin.PluginRepository - 	Nutch Scoring (org.apache.nutch.scoring.ScoringFilter)
+2015-06-05 12:15:51,591 INFO  plugin.PluginRepository - 	Nutch URL Normalizer (org.apache.nutch.net.URLNormalizer)
+2015-06-05 12:15:51,592 INFO  plugin.PluginRepository - 	Nutch Protocol (org.apache.nutch.protocol.Protocol)
+2015-06-05 12:15:51,599 WARN  urlfilter.WaybackURLFilter - No exclusions file set for property: "nutchwax.urlfilter.wayback.exclusions"
+2015-06-05 12:15:51,615 INFO  nutchwax.Importer - Importing ARC: /warcs/a.warc
+2015-06-05 12:15:51,681 INFO  nutchwax.Importer - Consider URL: http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 (text/html; charset=utf-8) [34487]
+2015-06-05 12:15:51,689 INFO  nutchwax.Importer - Bytes read: expected=34162 bytes.length=34162 pos=34162 count=0
+2015-06-05 12:15:51,703 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 sha1:4CLOLVPBB7DNNMDKPCS5ZC6P6HCPXP5F 20150131225001
+2015-06-05 12:15:51,918 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:15:58,481 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2015-06-05 12:15:58,494 INFO  nutchwax.Importer - Consider URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee (text/html) [342]
+2015-06-05 12:15:58,494 INFO  nutchwax.Importer - Skip     URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee HTTP status:301
+2015-06-05 12:15:58,495 INFO  nutchwax.Importer - Consider URL: http://www.varbla.ee/client/text/text/text/css (text/html; charset=utf-8) [37555]
+2015-06-05 12:15:58,498 INFO  nutchwax.Importer - Bytes read: expected=37288 bytes.length=37288 pos=37288 count=0
+2015-06-05 12:15:58,499 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.varbla.ee/client/text/text/text/css sha1:VJ36D5IBCHH4P2FSKK6BCGVPQCXXYQ63 20150131225001
+2015-06-05 12:15:58,579 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=windows-1257 OriginalCharEncoding=windows-1257 
+2015-06-05 12:17:42,225 INFO  plugin.PluginRepository - Plugins: looking in: /home/jaan/nutchwax-0.13/plugins
+2015-06-05 12:17:42,396 INFO  plugin.PluginRepository - Plugin Auto-activation mode: [true]
+2015-06-05 12:17:42,396 INFO  plugin.PluginRepository - Registered Plugins:
+2015-06-05 12:17:42,396 INFO  plugin.PluginRepository - 	Html Parse Plug-in (parse-html)
+2015-06-05 12:17:42,396 INFO  plugin.PluginRepository - 	HTTP Framework (lib-http)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	the nutch core extension points (nutch-extensionpoints)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	NutchWAX Query Filter (query-nutchwax)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	JavaScript Parser (parse-js)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	NutchWAX URL Filter (urlfilter-nutchwax)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Text Parse Plug-in (parse-text)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	NutchWAX Scoring Filter (scoring-nutchwax)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	CyberNeko HTML Parser (lib-nekohtml)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Basic Query Filter (query-basic)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Basic Summarizer Plug-in (summary-basic)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Pdf Parse Plug-in (parse-pdf)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Http Protocol Plug-in (protocol-http)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	HTML Raw Parse (parse-htmlraw)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	NutchWAX Indexing Filter (index-nutchwax)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - Registered Extension-Points:
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Nutch Search Results Response Writer (org.apache.nutch.searcher.response.ResponseWriter)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	HTML Parse Filter (org.apache.nutch.parse.HtmlParseFilter)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Nutch Summarizer (org.apache.nutch.searcher.Summarizer)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Nutch Online Search Results Clustering Plugin (org.apache.nutch.clustering.OnlineClusterer)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Nutch Field Filter (org.apache.nutch.indexer.field.FieldFilter)
+2015-06-05 12:17:42,397 INFO  plugin.PluginRepository - 	Nutch Indexing Filter (org.apache.nutch.indexer.IndexingFilter)
+2015-06-05 12:17:42,404 INFO  plugin.PluginRepository - 	Nutch Analysis (org.apache.nutch.analysis.NutchAnalyzer)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch Content Parser (org.apache.nutch.parse.Parser)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch URL Filter (org.apache.nutch.net.URLFilter)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch Query Filter (org.apache.nutch.searcher.QueryFilter)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Ontology Model Loader (org.apache.nutch.ontology.Ontology)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch Scoring (org.apache.nutch.scoring.ScoringFilter)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch URL Normalizer (org.apache.nutch.net.URLNormalizer)
+2015-06-05 12:17:42,405 INFO  plugin.PluginRepository - 	Nutch Protocol (org.apache.nutch.protocol.Protocol)
+2015-06-05 12:17:42,412 WARN  urlfilter.WaybackURLFilter - No exclusions file set for property: "nutchwax.urlfilter.wayback.exclusions"
+2015-06-05 12:17:42,426 INFO  nutchwax.Importer - Importing ARC: /warcs/a.warc
+2015-06-05 12:17:42,481 INFO  nutchwax.Importer - Consider URL: http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 (text/html; charset=utf-8) [34487]
+2015-06-05 12:17:42,488 INFO  nutchwax.Importer - Bytes read: expected=34162 bytes.length=34162 pos=34162 count=0
+2015-06-05 12:17:42,510 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 sha1:4CLOLVPBB7DNNMDKPCS5ZC6P6HCPXP5F 20150131225001
+2015-06-05 12:17:42,734 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:17:45,060 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2015-06-05 12:17:45,065 INFO  nutchwax.Importer - Consider URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee (text/html) [342]
+2015-06-05 12:17:45,065 INFO  nutchwax.Importer - Skip     URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee HTTP status:301
+2015-06-05 12:17:45,066 INFO  nutchwax.Importer - Consider URL: http://www.varbla.ee/client/text/text/text/css (text/html; charset=utf-8) [37555]
+2015-06-05 12:17:45,075 INFO  nutchwax.Importer - Bytes read: expected=37288 bytes.length=37288 pos=37288 count=0
+2015-06-05 12:17:45,078 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.varbla.ee/client/text/text/text/css sha1:VJ36D5IBCHH4P2FSKK6BCGVPQCXXYQ63 20150131225001
+2015-06-05 12:17:45,168 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=windows-1257 OriginalCharEncoding=windows-1257 
+2015-06-05 12:17:46,973 INFO  nutchwax.Importer - Consider URL: http://www.kuressaare.ee/uus/32784/index.php?lang=en (text/html) [57972]
+2015-06-05 12:17:46,973 INFO  nutchwax.Importer - Skip     URL: http://www.kuressaare.ee/uus/32784/index.php?lang=en HTTP status:301
+2015-06-05 12:17:46,975 INFO  nutchwax.Importer - Consider URL: http://www.rongu.ee/?page=166&view=1479 (text/html) [13608]
+2015-06-05 12:17:46,975 INFO  nutchwax.Importer - Bytes read: expected=13481 bytes.length=13481 pos=13481 count=0
+2015-06-05 12:17:46,976 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.rongu.ee/?page=166&view=1479 sha1:QGTLVHQPSZXZZKABXSF5RDCG6T5KHXV2 20150131225004
+2015-06-05 12:17:47,002 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=iso-8859-15 OriginalCharEncoding=iso-8859-15 
+2015-06-05 12:17:47,840 INFO  nutchwax.Importer - Consider URL: http://www.illuka.ee/uudised?news_id=485 (text/html; charset=UTF-8) [23946]
+2015-06-05 12:17:47,841 INFO  nutchwax.Importer - Bytes read: expected=23566 bytes.length=23566 pos=23566 count=0
+2015-06-05 12:17:47,842 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.illuka.ee/uudised?news_id=485 sha1:PSDOBX675DWIMOIYMPPORINRVYNCAQDW 20150131225004
+2015-06-05 12:17:47,878 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:19:17,282 INFO  plugin.PluginRepository - Plugins: looking in: /home/jaan/nutchwax-0.13/plugins
+2015-06-05 12:19:17,431 INFO  plugin.PluginRepository - Plugin Auto-activation mode: [true]
+2015-06-05 12:19:17,431 INFO  plugin.PluginRepository - Registered Plugins:
+2015-06-05 12:19:17,431 INFO  plugin.PluginRepository - 	Html Parse Plug-in (parse-html)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	HTTP Framework (lib-http)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	the nutch core extension points (nutch-extensionpoints)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	NutchWAX Query Filter (query-nutchwax)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	JavaScript Parser (parse-js)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	NutchWAX URL Filter (urlfilter-nutchwax)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Text Parse Plug-in (parse-text)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	NutchWAX Scoring Filter (scoring-nutchwax)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	CyberNeko HTML Parser (lib-nekohtml)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Basic Query Filter (query-basic)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Basic Summarizer Plug-in (summary-basic)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Pdf Parse Plug-in (parse-pdf)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Http Protocol Plug-in (protocol-http)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	HTML Raw Parse (parse-htmlraw)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	NutchWAX Indexing Filter (index-nutchwax)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - Registered Extension-Points:
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Search Results Response Writer (org.apache.nutch.searcher.response.ResponseWriter)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	HTML Parse Filter (org.apache.nutch.parse.HtmlParseFilter)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Summarizer (org.apache.nutch.searcher.Summarizer)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Online Search Results Clustering Plugin (org.apache.nutch.clustering.OnlineClusterer)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Field Filter (org.apache.nutch.indexer.field.FieldFilter)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Indexing Filter (org.apache.nutch.indexer.IndexingFilter)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Analysis (org.apache.nutch.analysis.NutchAnalyzer)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch Content Parser (org.apache.nutch.parse.Parser)
+2015-06-05 12:19:17,432 INFO  plugin.PluginRepository - 	Nutch URL Filter (org.apache.nutch.net.URLFilter)
+2015-06-05 12:19:17,433 INFO  plugin.PluginRepository - 	Nutch Query Filter (org.apache.nutch.searcher.QueryFilter)
+2015-06-05 12:19:17,433 INFO  plugin.PluginRepository - 	Ontology Model Loader (org.apache.nutch.ontology.Ontology)
+2015-06-05 12:19:17,439 INFO  plugin.PluginRepository - 	Nutch Scoring (org.apache.nutch.scoring.ScoringFilter)
+2015-06-05 12:19:17,439 INFO  plugin.PluginRepository - 	Nutch URL Normalizer (org.apache.nutch.net.URLNormalizer)
+2015-06-05 12:19:17,439 INFO  plugin.PluginRepository - 	Nutch Protocol (org.apache.nutch.protocol.Protocol)
+2015-06-05 12:19:17,446 WARN  urlfilter.WaybackURLFilter - No exclusions file set for property: "nutchwax.urlfilter.wayback.exclusions"
+2015-06-05 12:19:17,460 INFO  nutchwax.Importer - Importing ARC: /warcs/a.warc
+2015-06-05 12:19:17,513 INFO  nutchwax.Importer - Consider URL: http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 (text/html; charset=utf-8) [34487]
+2015-06-05 12:19:17,521 INFO  nutchwax.Importer - Bytes read: expected=34162 bytes.length=34162 pos=34162 count=0
+2015-06-05 12:19:17,541 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 sha1:4CLOLVPBB7DNNMDKPCS5ZC6P6HCPXP5F 20150131225001
+2015-06-05 12:19:17,760 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:19:19,092 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2015-06-05 12:19:19,097 INFO  nutchwax.Importer - Consider URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee (text/html) [342]
+2015-06-05 12:19:19,097 INFO  nutchwax.Importer - Skip     URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee HTTP status:301
+2015-06-05 12:19:19,099 INFO  nutchwax.Importer - Consider URL: http://www.varbla.ee/client/text/text/text/css (text/html; charset=utf-8) [37555]
+2015-06-05 12:19:19,101 INFO  nutchwax.Importer - Bytes read: expected=37288 bytes.length=37288 pos=37288 count=0
+2015-06-05 12:19:19,102 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.varbla.ee/client/text/text/text/css sha1:VJ36D5IBCHH4P2FSKK6BCGVPQCXXYQ63 20150131225001
+2015-06-05 12:19:19,187 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=windows-1257 OriginalCharEncoding=windows-1257 
+2015-06-05 12:19:20,843 INFO  nutchwax.Importer - Consider URL: http://www.kuressaare.ee/uus/32784/index.php?lang=en (text/html) [57972]
+2015-06-05 12:19:20,843 INFO  nutchwax.Importer - Skip     URL: http://www.kuressaare.ee/uus/32784/index.php?lang=en HTTP status:301
+2015-06-05 12:19:20,844 INFO  nutchwax.Importer - Consider URL: http://www.rongu.ee/?page=166&view=1479 (text/html) [13608]
+2015-06-05 12:19:20,845 INFO  nutchwax.Importer - Bytes read: expected=13481 bytes.length=13481 pos=13481 count=0
+2015-06-05 12:19:20,846 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.rongu.ee/?page=166&view=1479 sha1:QGTLVHQPSZXZZKABXSF5RDCG6T5KHXV2 20150131225004
+2015-06-05 12:19:20,868 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=iso-8859-15 OriginalCharEncoding=iso-8859-15 
+2015-06-05 12:20:23,515 INFO  plugin.PluginRepository - Plugins: looking in: /home/jaan/nutchwax-0.13/plugins
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - Plugin Auto-activation mode: [true]
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - Registered Plugins:
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	Html Parse Plug-in (parse-html)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	HTTP Framework (lib-http)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	the nutch core extension points (nutch-extensionpoints)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	NutchWAX Query Filter (query-nutchwax)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	JavaScript Parser (parse-js)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	NutchWAX URL Filter (urlfilter-nutchwax)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	Text Parse Plug-in (parse-text)
+2015-06-05 12:20:23,662 INFO  plugin.PluginRepository - 	NutchWAX Scoring Filter (scoring-nutchwax)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	CyberNeko HTML Parser (lib-nekohtml)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Basic Query Filter (query-basic)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Basic Summarizer Plug-in (summary-basic)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Pdf Parse Plug-in (parse-pdf)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Http Protocol Plug-in (protocol-http)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	HTML Raw Parse (parse-htmlraw)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	NutchWAX Indexing Filter (index-nutchwax)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - Registered Extension-Points:
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Nutch Search Results Response Writer (org.apache.nutch.searcher.response.ResponseWriter)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	HTML Parse Filter (org.apache.nutch.parse.HtmlParseFilter)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Nutch Summarizer (org.apache.nutch.searcher.Summarizer)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Nutch Online Search Results Clustering Plugin (org.apache.nutch.clustering.OnlineClusterer)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Nutch Field Filter (org.apache.nutch.indexer.field.FieldFilter)
+2015-06-05 12:20:23,663 INFO  plugin.PluginRepository - 	Nutch Indexing Filter (org.apache.nutch.indexer.IndexingFilter)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch Analysis (org.apache.nutch.analysis.NutchAnalyzer)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch Content Parser (org.apache.nutch.parse.Parser)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch URL Filter (org.apache.nutch.net.URLFilter)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch Query Filter (org.apache.nutch.searcher.QueryFilter)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Ontology Model Loader (org.apache.nutch.ontology.Ontology)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch Scoring (org.apache.nutch.scoring.ScoringFilter)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch URL Normalizer (org.apache.nutch.net.URLNormalizer)
+2015-06-05 12:20:23,671 INFO  plugin.PluginRepository - 	Nutch Protocol (org.apache.nutch.protocol.Protocol)
+2015-06-05 12:20:23,679 WARN  urlfilter.WaybackURLFilter - No exclusions file set for property: "nutchwax.urlfilter.wayback.exclusions"
+2015-06-05 12:20:23,694 INFO  nutchwax.Importer - Importing ARC: /warcs/a.warc
+2015-06-05 12:20:23,749 INFO  nutchwax.Importer - Consider URL: http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 (text/html; charset=utf-8) [34487]
+2015-06-05 12:20:23,758 INFO  nutchwax.Importer - Bytes read: expected=34162 bytes.length=34162 pos=34162 count=0
+2015-06-05 12:20:23,778 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 sha1:4CLOLVPBB7DNNMDKPCS5ZC6P6HCPXP5F 20150131225001
+2015-06-05 12:20:23,991 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:20:30,739 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2015-06-05 12:20:30,745 INFO  nutchwax.Importer - Consider URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee (text/html) [342]
+2015-06-05 12:20:30,745 INFO  nutchwax.Importer - Skip     URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee HTTP status:301
+2015-06-05 12:20:30,746 INFO  nutchwax.Importer - Consider URL: http://www.varbla.ee/client/text/text/text/css (text/html; charset=utf-8) [37555]
+2015-06-05 12:20:30,748 INFO  nutchwax.Importer - Bytes read: expected=37288 bytes.length=37288 pos=37288 count=0
+2015-06-05 12:20:30,749 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.varbla.ee/client/text/text/text/css sha1:VJ36D5IBCHH4P2FSKK6BCGVPQCXXYQ63 20150131225001
+2015-06-05 12:20:30,837 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=windows-1257 OriginalCharEncoding=windows-1257 
+2015-06-05 12:22:22,352 INFO  plugin.PluginRepository - Plugins: looking in: /home/jaan/nutchwax-0.13/plugins
+2015-06-05 12:22:22,522 INFO  plugin.PluginRepository - Plugin Auto-activation mode: [true]
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - Registered Plugins:
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Html Parse Plug-in (parse-html)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	HTTP Framework (lib-http)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	the nutch core extension points (nutch-extensionpoints)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	NutchWAX Query Filter (query-nutchwax)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	JavaScript Parser (parse-js)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	NutchWAX URL Filter (urlfilter-nutchwax)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Text Parse Plug-in (parse-text)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	NutchWAX Scoring Filter (scoring-nutchwax)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	CyberNeko HTML Parser (lib-nekohtml)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Basic Query Filter (query-basic)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Basic Summarizer Plug-in (summary-basic)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Pdf Parse Plug-in (parse-pdf)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Http Protocol Plug-in (protocol-http)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	HTML Raw Parse (parse-htmlraw)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	NutchWAX Indexing Filter (index-nutchwax)
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - Registered Extension-Points:
+2015-06-05 12:22:22,523 INFO  plugin.PluginRepository - 	Nutch Search Results Response Writer (org.apache.nutch.searcher.response.ResponseWriter)
+2015-06-05 12:22:22,524 INFO  plugin.PluginRepository - 	HTML Parse Filter (org.apache.nutch.parse.HtmlParseFilter)
+2015-06-05 12:22:22,524 INFO  plugin.PluginRepository - 	Nutch Summarizer (org.apache.nutch.searcher.Summarizer)
+2015-06-05 12:22:22,524 INFO  plugin.PluginRepository - 	Nutch Online Search Results Clustering Plugin (org.apache.nutch.clustering.OnlineClusterer)
+2015-06-05 12:22:22,524 INFO  plugin.PluginRepository - 	Nutch Field Filter (org.apache.nutch.indexer.field.FieldFilter)
+2015-06-05 12:22:22,524 INFO  plugin.PluginRepository - 	Nutch Indexing Filter (org.apache.nutch.indexer.IndexingFilter)
+2015-06-05 12:22:22,528 INFO  plugin.PluginRepository - 	Nutch Analysis (org.apache.nutch.analysis.NutchAnalyzer)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch Content Parser (org.apache.nutch.parse.Parser)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch URL Filter (org.apache.nutch.net.URLFilter)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch Query Filter (org.apache.nutch.searcher.QueryFilter)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Ontology Model Loader (org.apache.nutch.ontology.Ontology)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch Scoring (org.apache.nutch.scoring.ScoringFilter)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch URL Normalizer (org.apache.nutch.net.URLNormalizer)
+2015-06-05 12:22:22,529 INFO  plugin.PluginRepository - 	Nutch Protocol (org.apache.nutch.protocol.Protocol)
+2015-06-05 12:22:22,535 WARN  urlfilter.WaybackURLFilter - No exclusions file set for property: "nutchwax.urlfilter.wayback.exclusions"
+2015-06-05 12:22:22,550 INFO  nutchwax.Importer - Importing ARC: /warcs/a.warc
+2015-06-05 12:22:22,603 INFO  nutchwax.Importer - Consider URL: http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 (text/html; charset=utf-8) [34487]
+2015-06-05 12:22:22,611 INFO  nutchwax.Importer - Bytes read: expected=34162 bytes.length=34162 pos=34162 count=0
+2015-06-05 12:22:22,633 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.sonda.ee/index.php/component/jevents/day.listevents/2015/02/04/-?Itemid=1 sha1:4CLOLVPBB7DNNMDKPCS5ZC6P6HCPXP5F 20150131225001
+2015-06-05 12:22:22,855 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=utf-8 OriginalCharEncoding=utf-8 
+2015-06-05 12:22:30,956 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2015-06-05 12:22:30,965 INFO  nutchwax.Importer - Consider URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee (text/html) [342]
+2015-06-05 12:22:30,965 INFO  nutchwax.Importer - Skip     URL: http://www.viimsivald.ee/kaks-kolmandikku-eesti-elanikest-eelistab-rahvaloendusel-osaleda-interneti-teel/?lang=ee HTTP status:301
+2015-06-05 12:22:30,970 INFO  nutchwax.Importer - Consider URL: http://www.varbla.ee/client/text/text/text/css (text/html; charset=utf-8) [37555]
+2015-06-05 12:22:30,972 INFO  nutchwax.Importer - Bytes read: expected=37288 bytes.length=37288 pos=37288 count=0
+2015-06-05 12:22:30,973 INFO  urlfilter.WaybackURLFilter - Allowing : http://www.varbla.ee/client/text/text/text/css sha1:VJ36D5IBCHH4P2FSKK6BCGVPQCXXYQ63 20150131225001
+2015-06-05 12:22:31,057 INFO  htmlraw.HtmlRawParser - CharEncodingForConversion=windows-1257 OriginalCharEncoding=windows-1257 
