@@ -1,12 +1,13 @@
-Buildfile: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build.xml
+Building nutchWAX:
+Buildfile: /home/jaan/nutchwax-git/build.xml
 
 init:
-    [unjar] Expanding: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/lib/hadoop-0.19.1-core.jar into /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/hadoop
-    [untar] Expanding: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/hadoop/bin.tgz into /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/bin
-    [unjar] Expanding: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/lib/hadoop-0.19.1-core.jar into /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build
+    [unjar] Expanding: /home/jaan/nutchwax-git/lib/hadoop-0.19.1-core.jar into /home/jaan/nutchwax-git/build/hadoop
+    [untar] Expanding: /home/jaan/nutchwax-git/build/hadoop/bin.tgz into /home/jaan/nutchwax-git/bin
+    [unjar] Expanding: /home/jaan/nutchwax-git/lib/hadoop-0.19.1-core.jar into /home/jaan/nutchwax-git/build
 
 compile-core:
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build.xml:107: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/build.xml:107: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 compile-plugins:
 
@@ -28,7 +29,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: clustering-carrot2
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -74,7 +75,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: creativecommons
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -110,7 +111,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: parse-html
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -168,7 +169,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: feed
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -196,7 +197,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -218,7 +219,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: index-basic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -236,7 +237,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: index-anchor
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -254,7 +255,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: index-more
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -272,7 +273,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: field-basic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -290,7 +291,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: field-boost
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -310,7 +311,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: language-identifier
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -346,7 +347,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: parse-html
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -396,7 +397,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-http
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -464,7 +465,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -510,7 +511,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -542,7 +543,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: microformats-reltag
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -588,7 +589,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: ontology
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -620,7 +621,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -638,7 +639,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-ftp
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -662,13 +663,13 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-http
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
 compile:
      [echo] Compiling plugin: protocol-http
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -682,7 +683,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-http
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -724,13 +725,13 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-http
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
 compile:
      [echo] Compiling plugin: protocol-httpclient
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -748,7 +749,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-ext
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -776,7 +777,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -806,7 +807,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: parse-html
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -845,15 +846,11 @@ deploy:
 copy-generated-lib:
 
 init:
-
-init-plugin:
-
-deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-htmlraw
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
-    [javac] Compiling 1 source file to /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/parse-htmlraw/classes
+    [javac] /home/jaan/nutchwax-git/src/plugin/parse-htmlraw/build.xml:79: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /home/jaan/nutchwax-git/build/parse-htmlraw/classes
     [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
     [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
     [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
@@ -861,14 +858,13 @@ compile:
     [javac] 4 warnings
 
 jar:
-      [jar] Building jar: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/parse-htmlraw/parse-htmlraw.jar
-
-deps-test:
+     [echo] Build classes = /home/jaan/nutchwax-git/build/parse-htmlraw/classes
+      [jar] Building jar: /home/jaan/nutchwax-git/build/parse-htmlraw/parse-htmlraw.jar
 
 deploy:
 
 copy-generated-lib:
-     [copy] Copying 1 file to /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/plugins/parse-htmlraw
+     [copy] Copying 1 file to /home/jaan/nutchwax-git/build/plugins/parse-htmlraw
 
 init:
 
@@ -878,7 +874,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-js
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -918,13 +914,13 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
 compile:
      [echo] Compiling plugin: parse-msexcel
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -960,7 +956,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1020,7 +1016,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1064,13 +1060,13 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
 compile:
      [echo] Compiling plugin: parse-mspowerpoint
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1106,7 +1102,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1166,7 +1162,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1210,13 +1206,13 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
 compile:
      [echo] Compiling plugin: parse-msword
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1252,7 +1248,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: lib-parsems
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1312,7 +1308,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1342,7 +1338,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: parse-oo
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1388,7 +1384,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-pdf
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1416,7 +1412,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1446,7 +1442,7 @@ jar:
 
 compile:
      [echo] Compiling plugin: parse-rss
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1488,7 +1484,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1510,7 +1506,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-swf
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1538,7 +1534,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1560,7 +1556,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-text
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1578,7 +1574,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-zip
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1606,7 +1602,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: protocol-file
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1624,7 +1620,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: parse-text
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1646,7 +1642,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-basic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1664,7 +1660,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-more
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1682,7 +1678,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-site
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1700,7 +1696,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-custom
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1718,7 +1714,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-url
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1736,7 +1732,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: response-json
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1754,7 +1750,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: response-xml
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1772,7 +1768,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: scoring-opic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1804,7 +1800,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: scoring-link
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1836,7 +1832,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: summary-basic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1854,7 +1850,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: subcollection
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1872,7 +1868,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: summary-lucene
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1890,7 +1886,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: tld
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1914,7 +1910,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1926,14 +1922,14 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 compile-test:
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:174: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:174: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 compile:
      [echo] Compiling plugin: urlfilter-automaton
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1947,7 +1943,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1969,7 +1965,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlfilter-domain
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -1987,7 +1983,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlfilter-prefix
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2011,7 +2007,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2023,14 +2019,14 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 compile-test:
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:174: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:174: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 compile:
      [echo] Compiling plugin: urlfilter-regex
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2044,7 +2040,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: lib-regex-filter
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2066,7 +2062,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlfilter-suffix
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2084,7 +2080,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlfilter-validator
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2102,7 +2098,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlnormalizer-basic
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2120,7 +2116,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlnormalizer-pass
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2138,7 +2134,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlnormalizer-regex
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2170,7 +2166,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: index-nutchwax
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2188,7 +2184,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: query-nutchwax
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2206,7 +2202,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: scoring-nutchwax
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2224,7 +2220,7 @@ deps-jar:
 
 compile:
      [echo] Compiling plugin: urlfilter-nutchwax
-    [javac] /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
 
@@ -2237,7 +2233,8 @@ copy-generated-lib:
 compile:
 
 job:
-      [jar] Building jar: /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/build/nutch-1.0.job
+      [jar] Building jar: /home/jaan/nutchwax-git/build/nutch-1.0.job
 
 BUILD SUCCESSFUL
-Total time: 7 seconds
+Total time: 5 seconds
+Copying done!

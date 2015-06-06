@@ -36,7 +36,7 @@ public class Parser {
 		JSONObject json = new JSONObject(answer);
 		try {
 	        //json = new JSONObject(answer);
-			System.out.println("Keyset= " + json.keySet2());
+			System.out.println("Keyset= " + json.keySet());
 		} catch (NoSuchMethodError e) {
 			System.out.println("Answer = " + answer);
 			e.printStackTrace();
@@ -53,7 +53,7 @@ public class Parser {
         JSONArray json2;
         JSONObject jsonAns = new JSONObject();
         String jsonTemp;
-        for (String el : json.keySet2()) {
+        for (String el : json.keySet()) {
         	System.out.println(el);
         	json2 = json.getJSONArray(el);
         	for (int i = 0; i < json2.length(); i++) {

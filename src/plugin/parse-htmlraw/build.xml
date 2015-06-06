@@ -16,16 +16,7 @@
  limitations under the License.
 -->
 <project name="parse-htmlraw" default="compile">
-	<!--
-	<path id="classpath">
-		<fileset dir="lib" includes="*.jar" />
-		<fileset dir="src/org/json" includes="*.java"/>
-		<fileset dir="src/ee/ut/cs" includes="*.java"/>		
-	</path>
-	
-	<property name="myclasspath" refid="classpath"/>
-	<echo message="Classpath = ${myclasspath}"/>
-	-->
+
 	<!--<import file="../build-plugin.xml"/>-->
 	<property name="name" value="${ant.project.name}"/>
 	<property name="root" value="${basedir}"/>
@@ -102,7 +93,8 @@
 	</target>
 	
 	<target name="jar" depends="compile">
-    	<jar
+		<echo message="Build classes = ${build.classes}" />
+		<jar
       	  jarfile="${build.dir}/${name}.jar"
     	  basedir="${build.classes}"
     	/>
@@ -119,8 +111,8 @@
 	    <delete dir="${build.dir}"/>
 	    <delete dir="${deploy.dir}"/>
 	</target>
-	<!--
+	
 	<property name="myclasspath" refid="classpath"/>
 	<echo message="Classpath = ${myclasspath}"/>
-	-->
+	
 </project>
