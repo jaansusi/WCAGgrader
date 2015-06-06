@@ -19,7 +19,7 @@ public class Parser {
 		//Audit the given file
 		//>----------------------------------------------->
 		System.out.println(fileAddress);
-		Process process2 = new ProcessBuilder("access_lint", "audit", fileAddress).start();
+		Process process2 = new ProcessBuilder("access_lint/bin/access_lint", "audit", fileAddress).start();
 		InputStream is = process2.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
