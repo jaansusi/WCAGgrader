@@ -45,8 +45,8 @@
 		<pathelement location="${nutch.root}/build/classes"/>
 		<fileset dir="${nutch.root}/lib" includes="*.jar"/>
 		<fileset dir="lib" includes="*.jar" />
-		<fileset dir="src/org/json" includes="*.java"/>
-		<fileset dir="src/ee/ut/cs" includes="*.java"/>
+		<fileset dir="src/java/org/json" includes="*.java"/>
+		<fileset dir="src/java/ee/ut/cs" includes="*.java"/>
 		<path refid="plugin.deps"/>
 	</path>
 	
