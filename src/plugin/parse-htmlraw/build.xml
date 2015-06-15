@@ -17,7 +17,7 @@
 -->
 <project name="parse-htmlraw" default="compile">
 
-	<!--<import file="../build-plugin.xml"/>-->
+	
 	<property name="name" value="${ant.project.name}"/>
 	<property name="root" value="${basedir}"/>
 
@@ -45,8 +45,8 @@
 		<pathelement location="${nutch.root}/build/classes"/>
 		<fileset dir="${nutch.root}/lib" includes="*.jar"/>
 		<fileset dir="lib" includes="*.jar" />
-		<fileset dir="src/java/org/json" includes="*.java"/>
-		<fileset dir="src/java/ee/ut/cs" includes="*.java"/>
+		<fileset dir="src/org/json" includes="*.java"/>
+		<fileset dir="src/ee/ut/cs" includes="*.java"/>
 		<path refid="plugin.deps"/>
 	</path>
 	
@@ -71,11 +71,6 @@
 			<classpath refid="classpath"/>
 		</javac>
 	</target>
-	
-	<target name="compile-core">
-	    <ant target="compile-core" inheritall="false" dir="${nutch.root}"/>
-	    <ant target="compile"/>
-	</target>
 
 	<target name="deploy" depends="jar">
     	<mkdir dir="${deploy.dir}"/>
@@ -97,14 +92,8 @@
 		<jar
       	  jarfile="${build.dir}/${name}.jar"
     	  basedir="${build.classes}"
-    	/>
-	</target>
-
-	<target name="jar-core" depends="compile-core">
-    	<jar
-          jarfile="${build.dir}/${name}.jar"
-          basedir="${build.classes}"
-        />
+		  >
+		</jar>
 	</target>
 
 	<target name="clean">

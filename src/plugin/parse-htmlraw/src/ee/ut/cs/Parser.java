@@ -6,18 +6,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.File;
 
+import java.util.Set;
 
-import org.json.JSONObject;
-import org.json.JSONException;
-import org.json.JSONArray;
+import org.json.*;
 
-
+import java.lang.NoSuchMethodError;
 
 public class Parser {
 	public JSONObject accessLint (String fileAddress) throws IOException {
 		//Audit the given file
 		//>----------------------------------------------->
-		Process process2 = new ProcessBuilder("access_lint", "audit", fileAddress).start();
+		System.out.println(fileAddress);
+		Process process2 = new ProcessBuilder("access_lint/bin/access_lint", "audit", fileAddress).start();
 		InputStream is = process2.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
@@ -25,20 +25,22 @@ public class Parser {
 		String answer = "";
 		br.readLine();
 		while ((line = br.readLine()) != null) {
-			answer += line.replaceAll("=>", ":") + "\n";
+			//System.out.println(line);
+			if (line != "complete")
+				answer += line.replaceAll("=>", ":") + "\n";
 		}
 		
-		//int truncateIndex = answer.lastIndexOf('}', answer.length());
-
-        //System.out.println(answer.substring(0, truncateIndex+1));
-		System.out.println(answer);
-		JSONObject json = new JSONObject("{}");
+		//System.out.println("Answer is: " +answer);
+		JSONObject json = null;//new JSONObject(answer);
 		try {
 	        json = new JSONObject(answer);
-        } catch (JSONException e) {
-			System.out.println(answer);
+			System.out.println("Names = " + json.getNames(json));
+			System.out.println("Keyset= " + json.keySet());
+		} catch (NoSuchMethodError e) {
+			System.out.println("Answer = " + answer);
 			e.printStackTrace();
 			new File(fileAddress).delete();
+			return null;
 		}
 		//<-----------------------------------------------<
 		
@@ -49,7 +51,8 @@ public class Parser {
         //First find what we need, the codes and status
         JSONArray json2;
         JSONObject jsonAns = new JSONObject();
-        String jsonTemp;
+        System.out.println(json.getNames(json));
+		String jsonTemp;
         for (String el : json.keySet()) {
         	System.out.println(el);
         	json2 = json.getJSONArray(el);
