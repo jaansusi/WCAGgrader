@@ -15,93 +15,17 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<project name="parse-htmlraw" default="compile">
+<project name="parse-html" default="jar-core">
 
-	
-	<property name="name" value="${ant.project.name}"/>
-	<property name="root" value="${basedir}"/>
+  <import file="../build-plugin.xml"/>
 
-	<!-- load plugin-specific properties first -->
-	<property file="${user.home}/${name}.build.properties" />
-	<property file="${root}/build.properties" />
-	
-	<property name="nutch.root" location="${root}/../../../"/>
-	<property name="src.dir" location="${root}/src"/>
+  <!-- Build compilation dependencies -->
 
-	<property name="build.dir" location="${nutch.root}/build/${name}"/>
-	<property name="build.classes" location="${build.dir}/classes"/>
-	<property name="build.test" location="${build.dir}/test"/>
+  <!-- Add compilation dependencies to classpath -->
+  <path id="plugin.deps">
+    <fileset dir="${root}">
+		<include name="lib/*.jar" />
+    </fileset>
+  </path>
 
-	<property name="deploy.dir" location="${nutch.root}/build/plugins/${name}"/>
-	<!-- load nutch defaults last so that they can be overridden above -->
-	<property file="${nutch.root}/default.properties" />
-	
-	<path id="plugin.deps"/>
-	<fileset id="lib.jars" dir="${root}" includes="lib/*.jar"/>
-	
-	<path id="classpath">
-		<pathelement location="${build.classes}"/>
-		<fileset refid="lib.jars"/>
-		<pathelement location="${nutch.root}/build/classes"/>
-		<fileset dir="${nutch.root}/lib" includes="*.jar"/>
-		<fileset dir="lib" includes="*.jar" />
-		<fileset dir="src/org/json" includes="*.java"/>
-		<fileset dir="src/ee/ut/cs" includes="*.java"/>
-		<path refid="plugin.deps"/>
-	</path>
-	
-	<target name="init">
-		<mkdir dir="${build.dir}"/>
-		<mkdir dir="${build.classes}"/>
-		<mkdir dir="${build.test}"/>
-	</target>
-	
-	<target name="compile" depends="init">
-		<echo message="Compiling plugin: ${name}"/>
-		<javac 
-		 encoding="${build.encoding}" 
-		 srcdir="${src.dir}"
-		 includes="**/*.java"
-		 destdir="${build.classes}"
-		 debug="${javac.debug}"
-		 optimize="${javac.optimize}"
-		 target="${javac.version}"
-		 source="${javac.version}"
-		 deprecation="${javac.deprecation}">
-			<classpath refid="classpath"/>
-		</javac>
-	</target>
-
-	<target name="deploy" depends="jar">
-    	<mkdir dir="${deploy.dir}"/>
-    	<copy file="plugin.xml" todir="${deploy.dir}" 
-          preservelastmodified="true"/>
-    	<available property="lib-available" file="${build.dir}/${name}.jar"/>
-    	<antcall target="copy-generated-lib"/>
-    	<copy todir="${deploy.dir}" flatten="true">
-    		<fileset refid="lib.jars"/>
-    	</copy>
-	</target>
-
-	<target name="copy-generated-lib" if="lib-available">
-  		<copy file="${build.dir}/${name}.jar" todir="${deploy.dir}" failonerror="false"/>
-	</target>
-	
-	<target name="jar" depends="compile">
-		<echo message="Build classes = ${build.classes}" />
-		<jar
-      	  jarfile="${build.dir}/${name}.jar"
-    	  basedir="${build.classes}"
-		  >
-		</jar>
-	</target>
-
-	<target name="clean">
-	    <delete dir="${build.dir}"/>
-	    <delete dir="${deploy.dir}"/>
-	</target>
-	
-	<property name="myclasspath" refid="classpath"/>
-	<echo message="Classpath = ${myclasspath}"/>
-	
 </project>
