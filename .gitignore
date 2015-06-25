@@ -6,3 +6,4 @@ segments/**
 unifier/.classpath
 unifier/.project
 unifier/.settings
+unifier/bin/**
