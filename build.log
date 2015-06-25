@@ -1,4 +1,3 @@
-Building nutchWAX:
 Buildfile: /home/jaan/nutchwax-git/build.xml
 
 init:
@@ -844,31 +843,24 @@ copy-generated-lib:
 deploy:
 
 copy-generated-lib:
-     [echo] Classpath = /home/jaan/nutchwax-git/build/parse-htmlraw/classes:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/lib/mysql-connector-java-5.1.35-bin.jar:/home/jaan/nutchwax-git/build/classes:/home/jaan/nutchwax-git/lib/apache-solr-common-1.3.0.jar:/home/jaan/nutchwax-git/lib/apache-solr-solrj-1.3.0.jar:/home/jaan/nutchwax-git/lib/commons-2.0.1-SNAPSHOT.jar:/home/jaan/nutchwax-git/lib/commons-beanutils-1.8.0.jar:/home/jaan/nutchwax-git/lib/commons-cli-2.0-SNAPSHOT.jar:/home/jaan/nutchwax-git/lib/commons-codec-1.3.jar:/home/jaan/nutchwax-git/lib/commons-collections-3.2.1.jar:/home/jaan/nutchwax-git/lib/commons-httpclient-3.0.1.jar:/home/jaan/nutchwax-git/lib/commons-lang-2.1.jar:/home/jaan/nutchwax-git/lib/commons-logging-1.0.4.jar:/home/jaan/nutchwax-git/lib/commons-logging-api-1.0.4.jar:/home/jaan/nutchwax-git/lib/fastutil-5.0.3.jar:/home/jaan/nutchwax-git/lib/hadoop-0.19.1-core.jar:/home/jaan/nutchwax-git/lib/icu4j-4_0_1.jar:/home/jaan/nutchwax-git/lib/jakarta-oro-2.0.8.jar:/home/jaan/nutchwax-git/lib/jets3t-0.6.1.jar:/home/jaan/nutchwax-git/lib/jetty-5.1.4.jar:/home/jaan/nutchwax-git/lib/junit-3.8.1.jar:/home/jaan/nutchwax-git/lib/libidn-0.6.5.jar:/home/jaan/nutchwax-git/lib/log4j-1.2.15.jar:/home/jaan/nutchwax-git/lib/lucene-core-2.4.0.jar:/home/jaan/nutchwax-git/lib/lucene-misc-2.4.0.jar:/home/jaan/nutchwax-git/lib/mg4j-1.0.1.jar:/home/jaan/nutchwax-git/lib/servlet-api.jar:/home/jaan/nutchwax-git/lib/taglibs-i18n.jar:/home/jaan/nutchwax-git/lib/tika-0.1-incubating.jar:/home/jaan/nutchwax-git/lib/wayback-core-1.2.1.jar:/home/jaan/nutchwax-git/lib/xerces-2_6_2-apis.jar:/home/jaan/nutchwax-git/lib/xerces-2_6_2.jar:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/CDL.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/Cookie.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/CookieList.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/HTTP.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/HTTPTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONArray.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONException.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONML.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONObject.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONString.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONStringer.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONWriter.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/Property.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/XML.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/XMLTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/ee/ut/cs/Parser.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/ee/ut/cs/Uploader.java
 
 init:
 
+init-plugin:
+
+deps-jar:
+
 compile:
      [echo] Compiling plugin: parse-htmlraw
-    [javac] /home/jaan/nutchwax-git/src/plugin/parse-htmlraw/build.xml:70: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
-    [javac] Compiling 19 source files to /home/jaan/nutchwax-git/build/parse-htmlraw/classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
-    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
-    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
-    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-    [javac] Note: /home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONObject.java uses unchecked or unsafe operations.
-    [javac] Note: Recompile with -Xlint:unchecked for details.
-    [javac] 4 warnings
+    [javac] /home/jaan/nutchwax-git/src/plugin/build-plugin.xml:111: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
 
 jar:
-     [echo] Build classes = /home/jaan/nutchwax-git/build/parse-htmlraw/classes
-      [jar] Building jar: /home/jaan/nutchwax-git/build/parse-htmlraw/parse-htmlraw.jar
+
+deps-test:
 
 deploy:
-     [echo] Classpath = /home/jaan/nutchwax-git/build/parse-htmlraw/classes:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/lib/mysql-connector-java-5.1.35-bin.jar:/home/jaan/nutchwax-git/build/classes:/home/jaan/nutchwax-git/lib/apache-solr-common-1.3.0.jar:/home/jaan/nutchwax-git/lib/apache-solr-solrj-1.3.0.jar:/home/jaan/nutchwax-git/lib/commons-2.0.1-SNAPSHOT.jar:/home/jaan/nutchwax-git/lib/commons-beanutils-1.8.0.jar:/home/jaan/nutchwax-git/lib/commons-cli-2.0-SNAPSHOT.jar:/home/jaan/nutchwax-git/lib/commons-codec-1.3.jar:/home/jaan/nutchwax-git/lib/commons-collections-3.2.1.jar:/home/jaan/nutchwax-git/lib/commons-httpclient-3.0.1.jar:/home/jaan/nutchwax-git/lib/commons-lang-2.1.jar:/home/jaan/nutchwax-git/lib/commons-logging-1.0.4.jar:/home/jaan/nutchwax-git/lib/commons-logging-api-1.0.4.jar:/home/jaan/nutchwax-git/lib/fastutil-5.0.3.jar:/home/jaan/nutchwax-git/lib/hadoop-0.19.1-core.jar:/home/jaan/nutchwax-git/lib/icu4j-4_0_1.jar:/home/jaan/nutchwax-git/lib/jakarta-oro-2.0.8.jar:/home/jaan/nutchwax-git/lib/jets3t-0.6.1.jar:/home/jaan/nutchwax-git/lib/jetty-5.1.4.jar:/home/jaan/nutchwax-git/lib/junit-3.8.1.jar:/home/jaan/nutchwax-git/lib/libidn-0.6.5.jar:/home/jaan/nutchwax-git/lib/log4j-1.2.15.jar:/home/jaan/nutchwax-git/lib/lucene-core-2.4.0.jar:/home/jaan/nutchwax-git/lib/lucene-misc-2.4.0.jar:/home/jaan/nutchwax-git/lib/mg4j-1.0.1.jar:/home/jaan/nutchwax-git/lib/servlet-api.jar:/home/jaan/nutchwax-git/lib/taglibs-i18n.jar:/home/jaan/nutchwax-git/lib/tika-0.1-incubating.jar:/home/jaan/nutchwax-git/lib/wayback-core-1.2.1.jar:/home/jaan/nutchwax-git/lib/xerces-2_6_2-apis.jar:/home/jaan/nutchwax-git/lib/xerces-2_6_2.jar:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/CDL.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/Cookie.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/CookieList.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/HTTP.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/HTTPTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONArray.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONException.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONML.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONObject.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONString.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONStringer.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/JSONWriter.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/Property.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/XML.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/org/json/XMLTokener.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/ee/ut/cs/Parser.java:/home/jaan/nutchwax-git/src/plugin/parse-htmlraw/src/java/ee/ut/cs/Uploader.java
 
 copy-generated-lib:
-     [copy] Copying 1 file to /home/jaan/nutchwax-git/build/plugins/parse-htmlraw
 
 init:
 
@@ -2237,8 +2229,6 @@ copy-generated-lib:
 compile:
 
 job:
-      [jar] Building jar: /home/jaan/nutchwax-git/build/nutch-1.0.job
 
 BUILD SUCCESSFUL
-Total time: 6 seconds
-Copying done!
+Total time: 3 seconds

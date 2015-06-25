@@ -8,7 +8,8 @@ import java.io.File;
 
 import java.util.Set;
 
-import org.json.*;
+import org.json.JSONObject;
+import org.json.JSONArray;
 
 import java.lang.NoSuchMethodError;
 
@@ -38,6 +39,7 @@ public class Parser {
 			System.out.println("Keyset= " + json.keySet());
 		} catch (NoSuchMethodError e) {
 			System.out.println("Answer = " + answer);
+			//System.out.println("TEST");
 			e.printStackTrace();
 			new File(fileAddress).delete();
 			return null;
