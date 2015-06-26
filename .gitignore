@@ -1,5 +1,5 @@
 grader/logs/**
 grader/build/**
 grader/segments/**
-**/TempFile-*
+**/TempFile*
 unifier/bin/**
