@@ -22,9 +22,10 @@
   <!-- Build compilation dependencies -->
 
   <!-- Add compilation dependencies to classpath -->
-  <path id="plugin.deps">
-    <fileset dir="${root}">
-		<include name="lib/*.jar" />
+  <!--<path id="plugin.deps">
+	  <fileset dir="${nutch.root}/lib">
+		<include name="json.jar" />
+		<include name="mysql.jar" />
     </fileset>
-  </path>
+</path>-->
 </project>
