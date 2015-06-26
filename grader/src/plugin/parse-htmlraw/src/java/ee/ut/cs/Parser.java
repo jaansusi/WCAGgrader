@@ -35,10 +35,10 @@ public class Parser {
 		JSONObject json = null;//new JSONObject(answer);
 		try {
 	        json = new JSONObject(answer);
-			System.out.println("Names = " + json.getNames(json));
+			//System.out.println("Names = " + json.getNames(json));
 			System.out.println("Keyset= " + json.keySet());
 		} catch (NoSuchMethodError e) {
-			System.out.println("Answer = " + answer);
+			////System.out.println("Answer = " + answer);
 			//System.out.println("TEST");
 			e.printStackTrace();
 			new File(fileAddress).delete();

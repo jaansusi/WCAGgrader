@@ -322,6 +322,7 @@ public class JSONObject {
      */
     public JSONObject(String source) throws JSONException {
         this(new JSONTokener(source));
+		System.out.println("TEST");
     }
 
     /**
