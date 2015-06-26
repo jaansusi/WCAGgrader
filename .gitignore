@@ -1,9 +1,5 @@
-logs/**
-build/**
-segments/**
+grader/logs/**
+grader/build/**
+grader/segments/**
 **/TempFile-*
-.metadata/**
-unifier/.classpath
-unifier/.project
-unifier/.settings
 unifier/bin/**

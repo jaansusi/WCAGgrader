@@ -27,5 +27,4 @@
 		<include name="lib/*.jar" />
     </fileset>
   </path>
-
 </project>
