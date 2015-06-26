@@ -33,6 +33,7 @@ public class Parser {
 		 * If json functions work again, the try/catch block can be removed.
 		 * Currently it is here so the program would not exit.
 		 */
+		
 		JSONObject json = null;
 		try {
 	        json = new JSONObject(answer);
@@ -43,6 +44,7 @@ public class Parser {
 			new File(fileAddress).delete();
 			return null;
 		}
+		
 		//<-----------------------------------------------<
 		
         
@@ -57,6 +59,7 @@ public class Parser {
         /*
 		System.out.println(JSONObject.getNames(json));
 		String jsonTemp;
+		JSONObject jsonTranslate = getTransformer();
         for (String el : json.keySet()) {
         	System.out.println(el);
         	json2 = json.getJSONArray(el);
@@ -71,7 +74,7 @@ public class Parser {
 		return jsonAns;
 		//<-----------------------------------------------<
 	}
-	private JSONObject getTranformer() {
+	private JSONObject getTransformer() {
 
 		/*
 		 * Key to transforming values to database format

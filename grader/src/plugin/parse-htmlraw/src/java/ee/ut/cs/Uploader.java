@@ -34,10 +34,11 @@ public class Uploader {
 			// TO-DO once json is fixed, switch out these values since a comma is needed when there
 			// are values before it
 			//String extra = ", `Time`";
-			String extraFields = "`Time`";
+			String extraFields = "`Time`, `Domain`, `Url`";
 			
 			//String extraValues = ", '" + new Date(System.currentTimeMillis()).toString() + "'";
 			String extraValues = "'" + new Date(System.currentTimeMillis()).toString() + "'";
+			extraValues += ", '" + domain + "', '" + url + "'";
 			
 			String sql = "INSERT INTO `Single` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";
 			System.out.println(sql);
