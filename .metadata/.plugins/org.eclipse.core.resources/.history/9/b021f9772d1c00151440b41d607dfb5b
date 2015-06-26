@@ -1,0 +1,63 @@
+package ee.ut.cs;
+import java.sql.*;
+import org.json.JSONObject;
+
+
+public class Uploader {
+	public Boolean postGrades(JSONObject json, String domain, String url) {
+		//If uploaded successfully, return 1, otherwise 0
+		String host = "jdbc:mysql://localhost:3306/mydb";
+		String user = "root";
+		String pass = "toor";
+		
+		
+		
+		//Try creating the connection and uploading the values
+		//>----------------------------------------------->
+		try {
+			Connection con = DriverManager.getConnection(host, user, pass);
+			Statement query = con.createStatement();
+			
+			String fieldsTemp = "", valuesTemp = "";
+			//int i = 0;
+			
+			/*
+			 * TO-DO
+			 * Fix the values back to original (currently commented out below)
+			 * once json functions have been fixed
+			 */
+			/*
+			for (String el : json.keySet()) {
+			fieldsTemp += "`" + el + "`, ";
+			valuesTemp += "'" + json.get(el).toString().substring(2, json.get(el).toString().length() - 2) + "', ";
+			}
+			String fields = fieldsTemp.substring(0, fieldsTemp.length() - 2);
+			String values = valuesTemp.substring(0, valuesTemp.length() - 2);
+			*/
+			String fields = "";
+			String values = "";
+			// ------------------
+			String extra = ", `Time`";
+			String extraValues = "";
+			String time = new Date(System.currentTimeMillis()).toString();
+			extraValues += ", '" + time + "'";
+			
+			String sql = "INSERT INTO `Single` (" + fields + extra + ") VALUES (" + values + extraValues + ");";
+			System.out.println(sql);
+			query.execute(sql);
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+		    System.out.println("SQLException: " + e.getMessage());
+		    System.out.println("SQLState: " + e.getSQLState());
+		    System.out.println("VendorError: " + e.getErrorCode());
+			return false;
+		}
+		
+		//<-----------------------------------------------<
+		
+		
+		
+		return true;
+	}
+}

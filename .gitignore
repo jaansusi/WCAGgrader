@@ -2,4 +2,3 @@ grader/logs/**
 grader/build/**
 grader/segments/**
 **/TempFile*
-unifier/bin/**
