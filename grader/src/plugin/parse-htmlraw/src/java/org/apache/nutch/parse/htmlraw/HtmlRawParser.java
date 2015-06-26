@@ -5,23 +5,23 @@ import java.io.UnsupportedEncodingException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.UnknownHostException;
+import java.net.URL;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
-import org.apache.nutch.metadata.Metadata;
 import org.apache.nutch.parse.HTMLMetaTags;
 import org.apache.nutch.parse.HtmlParseFilter;
-import org.apache.nutch.parse.Parse;
 import org.apache.nutch.parse.ParseResult;
 import org.apache.nutch.protocol.Content;
+import org.json.JSONObject;
 import org.w3c.dom.DocumentFragment;
 
 import ee.ut.cs.Parser;
 import ee.ut.cs.Uploader;
 
-import org.json.*;
+
+
 import java.util.Random;
 
 
@@ -45,9 +45,9 @@ public class HtmlRawParser implements HtmlParseFilter {
 
   public ParseResult filter(Content content, ParseResult parseResult, 
 		  HTMLMetaTags metaTags, DocumentFragment doc) {
-	 	  
-	Parse parse = parseResult.get(content.getUrl());
-	Metadata metadata = parse.getData().getParseMeta();
+	//Parse parse = parseResult.get(content.getUrl());
+	//System.out.println("content.getUrl(): " + content.getUrl());
+	//Metadata metadata = parse.getData().getParseMeta();
 	//LOG.info(metadata);
 	byte[] contentInOctets = content.getContent();
 	String htmlraw = new String();
@@ -74,16 +74,19 @@ public class HtmlRawParser implements HtmlParseFilter {
 		//Audit
 		//>---------------------------------------------------------->
 			Parser p = new Parser();
-			JSONObject j = p.accessLint(f.getAbsolutePath());
+			//JSONObject j = p.accessLint(f.getAbsolutePath());
 			Uploader sql = new Uploader();
 			//LOG.info("This works");
-			System.out.println(metadata);
-			sql.postGrades(j, "", "");
+			
+			URL domUrl = new URL(content.getUrl());
+			sql.postGrades(null, domUrl.getHost(), domUrl.getFile());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodError e) {
 			e.printStackTrace();
 		}
 		//<----------------------------------------------------------<

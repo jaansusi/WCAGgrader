@@ -6,15 +6,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.File;
 
-import java.util.Set;
-
 import org.json.JSONObject;
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.lang.NoSuchMethodError;
 
 public class Parser {
-	public JSONObject accessLint (String fileAddress) throws IOException {
+	public JSONObject accessLint (String fileAddress) throws IOException, JSONException {
 		//Audit the given file
 		//>----------------------------------------------->
 		System.out.println(fileAddress);
@@ -26,20 +25,20 @@ public class Parser {
 		String answer = "";
 		br.readLine();
 		while ((line = br.readLine()) != null) {
-			//System.out.println(line);
 			if (line != "complete")
 				answer += line.replaceAll("=>", ":") + "\n";
 		}
-		
-		//System.out.println("Answer is: " +answer);
-		JSONObject json = null;//new JSONObject(answer);
+		/*
+		 * TO-DO
+		 * If json functions work again, the try/catch block can be removed.
+		 * Currently it is here so the program would not exit.
+		 */
+		JSONObject json = null;
 		try {
 	        json = new JSONObject(answer);
-			//System.out.println("Names = " + json.getNames(json));
-			System.out.println("Keyset= " + json.keySet());
+			//json.keySet();
 		} catch (NoSuchMethodError e) {
-			////System.out.println("Answer = " + answer);
-			//System.out.println("TEST");
+			//System.out.println("Answer = " + answer);
 			e.printStackTrace();
 			new File(fileAddress).delete();
 			return null;
@@ -50,10 +49,13 @@ public class Parser {
         
         //Return results
         //>----------------------------------------------->
-        //First find what we need, the codes and status
+        /*
+         * Find database values based on the key below and return the answer
+         */
         JSONArray json2;
         JSONObject jsonAns = new JSONObject();
-        System.out.println(json.getNames(json));
+        /*
+		System.out.println(JSONObject.getNames(json));
 		String jsonTemp;
         for (String el : json.keySet()) {
         	System.out.println(el);
@@ -64,14 +66,18 @@ public class Parser {
         		jsonAns.append(jsonTranslate.get(jsonTemp).toString(), el);
         	}
 		}
+		*/
         
 		return jsonAns;
 		//<-----------------------------------------------<
 	}
+	private JSONObject getTranformer() {
 
-//Key to uploading
-//>----------------------------------------------->
-private JSONObject jsonTranslate = new JSONObject("{"
+		/*
+		 * Key to transforming values to database format
+		 */
+		try {
+			JSONObject jsonTranslate = new JSONObject("{"
         		+	"\"Elements with ARIA roles must use a valid, non-abstract ARIA role\" : \"ARIA-1\" ,"
         		+	"\"aria-labelledby attributes should refer to an element which exists in the DOM\" : \"ARIA-2\" ,"
         		+	"\"Elements with ARIA roles must have all required attributes for that role\" : \"ARIA-3\" ,"
@@ -98,5 +104,10 @@ private JSONObject jsonTranslate = new JSONObject("{"
         		+	"\"The web page should have a title that describes topic or purpose\" : \"TITLE-1\" ,"
         		+	"\"Video elements should use <track> elements to provide captions\" : \"VIDEO-1\" "
         		+	"}");
-//<-----------------------------------------------<
+			return jsonTranslate;
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return null; 
+	}
 }

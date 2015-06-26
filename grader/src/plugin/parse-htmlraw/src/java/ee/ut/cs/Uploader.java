@@ -18,20 +18,28 @@ public class Uploader {
 			Connection con = DriverManager.getConnection(host, user, pass);
 			Statement query = con.createStatement();
 			
-			String fieldsTemp = "", valuesTemp = "";
-			//int i = 0;
+			String fields = "", values = "";			
+			/*
+			 * TO-DO
+			 * Uncomment next section so elements from json are added
+			 * once json functions have been fixed
+			 */
+			/*
 			for (String el : json.keySet()) {
-				fieldsTemp += "`" + el + "`, ";
-				valuesTemp += "'" + json.get(el).toString().substring(2, json.get(el).toString().length() - 2) + "', ";
+				fields += "`" + el + "`, ";
+				values += "'" + json.get(el).toString().substring(2, json.get(el).toString().length() - 2) + "', ";
 			}
-			String fields = fieldsTemp.substring(0, fieldsTemp.length() - 2);
-			String values = valuesTemp.substring(0, valuesTemp.length() - 2);
-			String extra = ", `Time`";
-			String extraValues = "";
-			String time = new Date(System.currentTimeMillis()).toString();
-			extraValues += ", '" + time + "'";
+			*/
+			// ------------------
+			// TO-DO once json is fixed, switch out these values since a comma is needed when there
+			// are values before it
+			//String extra = ", `Time`";
+			String extraFields = "`Time`";
 			
-			String sql = "INSERT INTO `Single` (" + fields + extra + ") VALUES (" + values + extraValues + ");";
+			//String extraValues = ", '" + new Date(System.currentTimeMillis()).toString() + "'";
+			String extraValues = "'" + new Date(System.currentTimeMillis()).toString() + "'";
+			
+			String sql = "INSERT INTO `Single` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";
 			System.out.println(sql);
 			query.execute(sql);
 			
