@@ -74,12 +74,12 @@ public class HtmlRawParser implements HtmlParseFilter {
 		//Audit
 		//>---------------------------------------------------------->
 			Parser p = new Parser();
-			//JSONObject j = p.accessLint(f.getAbsolutePath());
+			JSONObject j = p.accessLint(f.getAbsolutePath());
 			Uploader sql = new Uploader();
 			//LOG.info("This works");
 			
 			URL domUrl = new URL(content.getUrl());
-			sql.postGrades(null, domUrl.getHost(), domUrl.getFile());
+			sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {

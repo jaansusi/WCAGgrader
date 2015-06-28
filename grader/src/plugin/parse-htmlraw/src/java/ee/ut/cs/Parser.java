@@ -37,7 +37,7 @@ public class Parser {
 		JSONObject json = null;
 		try {
 	        json = new JSONObject(answer);
-			//json.keySet();
+			json.keySet();
 		} catch (NoSuchMethodError e) {
 			//System.out.println("Answer = " + answer);
 			e.printStackTrace();
@@ -56,7 +56,7 @@ public class Parser {
          */
         JSONArray json2;
         JSONObject jsonAns = new JSONObject();
-        /*
+        
 		System.out.println(JSONObject.getNames(json));
 		String jsonTemp;
 		JSONObject jsonTranslate = getTransformer();
@@ -69,7 +69,7 @@ public class Parser {
         		jsonAns.append(jsonTranslate.get(jsonTemp).toString(), el);
         	}
 		}
-		*/
+		
         
 		return jsonAns;
 		//<-----------------------------------------------<
