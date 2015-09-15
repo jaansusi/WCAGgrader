@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.net.URL;
 
 import org.apache.commons.logging.Log;
@@ -15,6 +16,7 @@ import org.apache.nutch.parse.HtmlParseFilter;
 import org.apache.nutch.parse.ParseResult;
 import org.apache.nutch.protocol.Content;
 import org.json.JSONObject;
+import org.json.JSONException;
 import org.w3c.dom.DocumentFragment;
 
 import ee.ut.cs.Parser;
@@ -63,11 +65,19 @@ public class HtmlRawParser implements HtmlParseFilter {
 			rand = new Random().nextInt((max - min) + 1) + min;
 		} while (new File("TempFile-" + rand + ".html").exists());
 		File f = new File("TempFile-" + rand + ".html");
-		PrintWriter writer = null;
+		System.out.println(f.getAbsolutePath() + " created");
+				
 		try {
-			writer = new PrintWriter(f.getAbsolutePath(), "UTF-8");
-			writer.println(htmlraw);
-			writer.close();
+			//PrintWriter writer = null;
+			//writer = new PrintWriter(f.getAbsolutePath(), "UTF-8");
+			
+			//writer.println(htmlraw);
+			//writer.close();
+			FileWriter fw = new FileWriter(f.getAbsolutePath());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(htmlraw);
+			bw.close();
+			fw.close();
 
 		//<----------------------------------------------------------<
 		
@@ -76,24 +86,25 @@ public class HtmlRawParser implements HtmlParseFilter {
 			Parser p = new Parser();
 			JSONObject j = p.accessLint(f.getAbsolutePath());
 			Uploader sql = new Uploader();
-			//LOG.info("This works");
-			
+						
 			URL domUrl = new URL(content.getUrl());
-			sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
+			//sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (NoSuchMethodError e) {
+		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		//<----------------------------------------------------------<
 		
 		//Delete created file
 		//>---------------------------------------------------------->
-		f.delete();
+		if (f.delete())
+			System.out.println("\t and deleted.");
+		else System.out.println("\t but not deleted.");
 		//<----------------------------------------------------------<
 		//LOG.info(htmlraw);
 		

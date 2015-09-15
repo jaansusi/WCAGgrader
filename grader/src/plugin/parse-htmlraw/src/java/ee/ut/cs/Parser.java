@@ -16,7 +16,7 @@ public class Parser {
 	public JSONObject accessLint (String fileAddress) throws IOException, JSONException {
 		//Audit the given file
 		//>----------------------------------------------->
-		System.out.println(fileAddress);
+		//System.out.println(fileAddress);
 		Process process2 = new ProcessBuilder("access_lint/bin/access_lint", "audit", fileAddress).start();
 		InputStream is = process2.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
@@ -34,16 +34,9 @@ public class Parser {
 		 * Currently it is here so the program would not exit.
 		 */
 		
-		JSONObject json = null;
-		try {
-	        json = new JSONObject(answer);
-			json.keySet();
-		} catch (NoSuchMethodError e) {
-			//System.out.println("Answer = " + answer);
-			e.printStackTrace();
-			new File(fileAddress).delete();
-			return null;
-		}
+		JSONObject json = new JSONObject(answer);
+		json.keySet();
+		
 		
 		//<-----------------------------------------------<
 		
