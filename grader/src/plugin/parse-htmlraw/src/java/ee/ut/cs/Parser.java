@@ -17,7 +17,7 @@ public class Parser {
 		//Audit the given file
 		//>----------------------------------------------->
 		//System.out.println(fileAddress);
-		Process process2 = new ProcessBuilder("access_lint/bin/access_lint", "audit", fileAddress).start();
+		Process process2 = new ProcessBuilder("access_lint", "audit", fileAddress).start();
 		InputStream is = process2.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
@@ -28,12 +28,7 @@ public class Parser {
 			if (line != "complete")
 				answer += line.replaceAll("=>", ":") + "\n";
 		}
-		/*
-		 * TO-DO
-		 * If json functions work again, the try/catch block can be removed.
-		 * Currently it is here so the program would not exit.
-		 */
-		
+
 		JSONObject json = new JSONObject(answer);
 		json.keySet();
 		

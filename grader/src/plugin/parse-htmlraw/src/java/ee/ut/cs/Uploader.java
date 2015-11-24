@@ -1,7 +1,8 @@
 package ee.ut.cs;
 import java.sql.*;
 import org.json.JSONObject;
-import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Uploader {
 	public Boolean postGrades(JSONObject json, String domain, String url) {
@@ -37,9 +38,8 @@ public class Uploader {
 			String extraFields = "`Time`, `Domain`, `Url`";	
 			
 			//String extraValues = ", '" + new Date(System.currentTimeMillis()).toString() + "'";
-			String extraValues = "'" + new Date(System.currentTimeMillis()).toString()
-									//+ ", " + Calendar.getInstance().getTime()
-									+ "'";
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss");
+			String extraValues = "'" + sdf.format(new Date()).toString() + "'";
 			extraValues += ", '" + domain + "', '" + url + "'";
 			
 			String sql = "INSERT INTO `access_lint` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";

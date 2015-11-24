@@ -68,11 +68,6 @@ public class HtmlRawParser implements HtmlParseFilter {
 		System.out.println(f.getAbsolutePath() + " created");
 				
 		try {
-			//PrintWriter writer = null;
-			//writer = new PrintWriter(f.getAbsolutePath(), "UTF-8");
-			
-			//writer.println(htmlraw);
-			//writer.close();
 			FileWriter fw = new FileWriter(f.getAbsolutePath());
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(htmlraw);
@@ -88,7 +83,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 			Uploader sql = new Uploader();
 						
 			URL domUrl = new URL(content.getUrl());
-			//sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
+			sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
