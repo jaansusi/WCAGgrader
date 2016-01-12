@@ -5,7 +5,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Uploader {
-	public Boolean postGrades(JSONObject json, String domain, String url) {
+	public Boolean postGrades(JSONObject json, String domain, String url, Integer choice) {
 		//If uploaded successfully, return 1, otherwise 0
 		String host = "jdbc:mysql://localhost:3306/mydb";
 		String user = "root";
@@ -25,26 +25,27 @@ public class Uploader {
 			 * Uncomment next section so elements from json are added
 			 * once json functions have been fixed
 			 */
-			
-			for (String el : json.keySet()) {
-				fields += "`" + el + "`, ";
-				values += "'" + json.get(el).toString().substring(2, json.get(el).toString().length() - 2) + "', ";
+			if (choice == 1) {
+				for (String el : json.keySet()) {
+					fields += "`" + el + "`, ";
+					values += "'" + json.get(el).toString().substring(2, json.get(el).toString().length() - 2) + "', ";
+				}
+				
+				String extraFields = "`Time`, `Domain`, `Url`";	
+				
+				//String extraValues = ", '" + new Date(System.currentTimeMillis()).toString() + "'";
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss");
+				String extraValues = "'" + sdf.format(new Date()).toString() + "'";
+				extraValues += ", '" + domain + "', '" + url + "'";
+				
+				String sql = "INSERT INTO `access_lint` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";
+				System.out.println(sql);
+				query.execute(sql);
+			} else if (choice == 2) {
+
+
+				
 			}
-			
-			// ------------------
-			// TO-DO once json is fixed, switch out these values since a comma is needed when there
-			// are values before it
-			
-			String extraFields = "`Time`, `Domain`, `Url`";	
-			
-			//String extraValues = ", '" + new Date(System.currentTimeMillis()).toString() + "'";
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss");
-			String extraValues = "'" + sdf.format(new Date()).toString() + "'";
-			extraValues += ", '" + domain + "', '" + url + "'";
-			
-			String sql = "INSERT INTO `access_lint` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";
-			System.out.println(sql);
-			query.execute(sql);
 			
 		} catch (SQLException e) {
 			System.out.println(e);

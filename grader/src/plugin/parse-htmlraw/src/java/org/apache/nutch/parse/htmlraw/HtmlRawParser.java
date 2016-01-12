@@ -22,7 +22,7 @@ import org.w3c.dom.DocumentFragment;
 import ee.ut.cs.Parser;
 import ee.ut.cs.Uploader;
 
-
+import java.util.Properties;
 
 import java.util.Random;
 
@@ -76,6 +76,13 @@ public class HtmlRawParser implements HtmlParseFilter {
 
 		//<----------------------------------------------------------<
 		
+		//Make a decision based on the conf file located in root folder
+		Properties prop = new Properties();
+		InputStream is = new FileInputStream("plugin-conf.cfg");
+		prop.load(is);
+		int grader = Integer.parseInt(prop.getProperty("GRADER"));
+		
+
 		//Audit
 		//>---------------------------------------------------------->
 			Parser p = new Parser();

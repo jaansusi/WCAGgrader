@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.File;
+import java.io.FileInputStream;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -17,8 +18,11 @@ public class Parser {
 		//Audit the given file
 		//>----------------------------------------------->
 		//System.out.println(fileAddress);
-		Process process2 = new ProcessBuilder("access_lint", "audit", fileAddress).start();
-		InputStream is = process2.getInputStream();
+		
+		//TO-DO
+		//Work out a workflow that does not require two separate ifs
+		Process process = new ProcessBuilder("access_lint", "audit", fileAddress).start();
+		is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
 		String line;
@@ -28,10 +32,8 @@ public class Parser {
 			if (line != "complete")
 				answer += line.replaceAll("=>", ":") + "\n";
 		}
-
 		JSONObject json = new JSONObject(answer);
-		json.keySet();
-		
+		//json.keySet();
 		
 		//<-----------------------------------------------<
 		
@@ -58,14 +60,27 @@ public class Parser {
         	}
 		}
 		
-        
 		return jsonAns;
 		//<-----------------------------------------------<
 	}
+
+	public JSONObject pa11y(String fileAddress) throws IOException, JSONException {
+		Process process = new ProcessBuilder("pa11y", "-r json", fileAddress).start();
+		is = process.getInputStream();
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+		String line;
+		String answer = "";
+		br.readLine();
+		while ((line = br.readLine()) != null) {
+
+		}
+	}
+
 	private JSONObject getTransformer() {
 
 		/*
-		 * Key to transforming values to database format
+		 * Key to transforming values to database format for access_lint
 		 */
 		try {
 			JSONObject jsonTranslate = new JSONObject("{"
