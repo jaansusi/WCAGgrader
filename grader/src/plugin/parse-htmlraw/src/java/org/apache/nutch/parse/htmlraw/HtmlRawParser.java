@@ -25,7 +25,7 @@ import ee.ut.cs.Parser;
 import ee.ut.cs.Uploader;
 
 import java.util.Properties;
-
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -90,14 +90,18 @@ public class HtmlRawParser implements HtmlParseFilter {
 			Parser p = new Parser();
 			Uploader sql = new Uploader();
 			JSONObject j = new JSONObject();
+
+			URL domUrl = new URL(content.getUrl());
 			System.out.println(grader);
 			if (grader == 1) {
 				j = p.accessLint(f.getAbsolutePath());
+				sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile());
 			} else if (grader == 2) {
-				j = p.pa11y(f.getAbsolutePath());
+				ArrayList<JSONObject> array = p.pa11y(f.getAbsolutePath());
+				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
 			}
-			URL domUrl = new URL(content.getUrl());
-			//sql.postGrades(j, domUrl.getHost(), domUrl.getFile(), grader);
+			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {

@@ -8,11 +8,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.lang.NoSuchMethodError;
+
 
 public class Parser {
 	public JSONObject accessLint (String fileAddress) throws IOException, JSONException {
@@ -65,20 +69,31 @@ public class Parser {
 		//<-----------------------------------------------<
 	}
 
-	public JSONObject pa11y(String fileAddress) throws IOException, JSONException {
-		System.out.println(fileAddress);
-		Process process = new ProcessBuilder("pa11y", "-r json", "file://" + fileAddress).start();
+	public ArrayList<JSONObject> pa11y(String fileAddress) throws IOException, JSONException {
+
+		Process process = new ProcessBuilder("pa11y", "-r", "json", "file://" + fileAddress).start();
 		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
 		String line;
-		String ans = "";
+		String output = "";
 		while ((line = br.readLine()) != null) {
-			ans += line;
+			output += line;
 		}
-		System.out.println("Ans: " + ans);
-		ans = ans.substring(1, ans.length());
-		return new JSONObject(ans);
+
+		//TO-DO Remove this horrible ghetto rig
+
+		//Remove the first and last 2 symbols
+		//Then split it into different pieces at },{
+		//Then add {} around the pieces and we have a list of JSONObjects
+		output = output.substring(2, output.length()-2);
+		ArrayList<String> array = new ArrayList<String>(Arrays.asList(output.split("},{")));
+		ArrayList<JSONObject> jsonArray = null;
+		jsonArray = new ArrayList<JSONObject>();
+		for (String str : array) {
+			jsonArray.add(new JSONObject("{" + str + "}"));
+		} 
+		return jsonArray;
 	}
 
 	private JSONObject getTransformer() {
