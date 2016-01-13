@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.net.URL;
@@ -77,20 +79,25 @@ public class HtmlRawParser implements HtmlParseFilter {
 		//<----------------------------------------------------------<
 		
 		//Make a decision based on the conf file located in root folder
-		Properties prop = new Properties();
-		InputStream is = new FileInputStream("plugin-conf.cfg");
-		prop.load(is);
-		int grader = Integer.parseInt(prop.getProperty("GRADER"));
+			Properties prop = new Properties();
+			InputStream is = new FileInputStream("plugin-conf.cfg");
+			prop.load(is);
+			int grader = Integer.parseInt(prop.getProperty("GRADER"));
 		
 
 		//Audit
 		//>---------------------------------------------------------->
 			Parser p = new Parser();
-			JSONObject j = p.accessLint(f.getAbsolutePath());
 			Uploader sql = new Uploader();
-						
+			JSONObject j = new JSONObject();
+			System.out.println(grader);
+			if (grader == 1) {
+				j = p.accessLint(f.getAbsolutePath());
+			} else if (grader == 2) {
+				j = p.pa11y(f.getAbsolutePath());
+			}
 			URL domUrl = new URL(content.getUrl());
-			sql.postGrades(j, domUrl.getHost(), domUrl.getFile());
+			//sql.postGrades(j, domUrl.getHost(), domUrl.getFile(), grader);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {

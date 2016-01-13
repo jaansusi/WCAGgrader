@@ -20,11 +20,7 @@ public class Uploader {
 			Statement query = con.createStatement();
 			
 			String fields = "", values = "";			
-			/*
-			 * TO-DO
-			 * Uncomment next section so elements from json are added
-			 * once json functions have been fixed
-			 */
+			
 			if (choice == 1) {
 				for (String el : json.keySet()) {
 					fields += "`" + el + "`, ";

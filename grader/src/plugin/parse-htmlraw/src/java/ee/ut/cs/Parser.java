@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.*;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -22,7 +23,7 @@ public class Parser {
 		//TO-DO
 		//Work out a workflow that does not require two separate ifs
 		Process process = new ProcessBuilder("access_lint", "audit", fileAddress).start();
-		is = process.getInputStream();
+		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
 		String line;
@@ -65,16 +66,19 @@ public class Parser {
 	}
 
 	public JSONObject pa11y(String fileAddress) throws IOException, JSONException {
-		Process process = new ProcessBuilder("pa11y", "-r json", fileAddress).start();
-		is = process.getInputStream();
+		System.out.println(fileAddress);
+		Process process = new ProcessBuilder("pa11y", "-r json", "file://" + fileAddress).start();
+		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
 		String line;
-		String answer = "";
-		br.readLine();
+		String ans = "";
 		while ((line = br.readLine()) != null) {
-
+			ans += line;
 		}
+		System.out.println("Ans: " + ans);
+		ans = ans.substring(1, ans.length());
+		return new JSONObject(ans);
 	}
 
 	private JSONObject getTransformer() {
