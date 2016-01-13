@@ -34,3 +34,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`access_lint` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 2116
 DEFAULT CHARACTER SET = latin1
+CREATE TABLE IF NOT EXISTS `mydb`.`html_codesniffer` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC));
+

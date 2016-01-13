@@ -2,3 +2,4 @@ grader/logs/**
 grader/build/**
 grader/segments/**
 **/TempFile*
+grader/*.log
