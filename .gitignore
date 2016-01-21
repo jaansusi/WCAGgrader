@@ -3,3 +3,5 @@ grader/build/**
 grader/segments/**
 **/TempFile*
 grader/*.log
+./.recommenders/**
+./.metadata/**

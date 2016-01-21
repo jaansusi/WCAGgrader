@@ -56,7 +56,6 @@ public class HtmlRawParser implements HtmlParseFilter {
 	byte[] contentInOctets = content.getContent();
 	String htmlraw = new String();
 	try {
-		//XXX: utf-8 only? could get encoding from parseresult?
 		htmlraw = new String (contentInOctets,"UTF-8");
 		//Create random file
 		//>---------------------------------------------------------->
@@ -82,8 +81,8 @@ public class HtmlRawParser implements HtmlParseFilter {
 			Properties prop = new Properties();
 			InputStream is = new FileInputStream("plugin-conf.cfg");
 			prop.load(is);
-			int grader = Integer.parseInt(prop.getProperty("GRADER"));
-		
+			String grader = prop.getProperty("GRADER");
+			is.close();
 
 		//Audit
 		//>---------------------------------------------------------->
@@ -93,10 +92,10 @@ public class HtmlRawParser implements HtmlParseFilter {
 
 			URL domUrl = new URL(content.getUrl());
 			System.out.println(grader);
-			if (grader == 1) {
+			if (grader.equals("AL")) {
 				j = p.accessLint(f.getAbsolutePath());
 				sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile());
-			} else if (grader == 2) {
+			} else if (grader.equals("HTML")) {
 				ArrayList<JSONObject> array = p.pa11y(f.getAbsolutePath());
 				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
 			}

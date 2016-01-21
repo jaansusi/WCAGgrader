@@ -37,7 +37,13 @@ public class Parser {
 			if (line != "complete")
 				answer += line.replaceAll("=>", ":") + "\n";
 		}
-		JSONObject json = new JSONObject(answer);
+		JSONObject json = null;
+		try	{
+			json = new JSONObject(answer);
+		} catch (JSONException e) {
+			System.out.println(answer);
+			throw new JSONException(e);
+		}
 		//json.keySet();
 		
 		//<-----------------------------------------------<
