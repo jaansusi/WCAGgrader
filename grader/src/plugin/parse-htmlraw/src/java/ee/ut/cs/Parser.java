@@ -66,7 +66,7 @@ public class Parser {
         	json2 = json.getJSONArray(el);
         	for (int i = 0; i < json2.length(); i++) {
         		jsonTemp = new JSONObject(json2.get(i).toString()).get("title").toString();
-        		System.out.println(jsonTranslate.get(jsonTemp));
+        		//System.out.println(jsonTranslate.get(jsonTemp));
         		jsonAns.append(jsonTranslate.get(jsonTemp).toString(), el);
         	}
 		}
@@ -93,12 +93,25 @@ public class Parser {
 		//Then split it into different pieces at },{
 		//Then add {} around the pieces and we have a list of JSONObjects
 		output = output.substring(2, output.length()-2);
-		ArrayList<String> array = new ArrayList<String>(Arrays.asList(output.split("},{")));
-		ArrayList<JSONObject> jsonArray = null;
-		jsonArray = new ArrayList<JSONObject>();
+		//System.out.println(output + "\n");
+		for (String str : output.split("},{")) {
+			//System.out.println(str);
+		}
+		ArrayList<String> array = new ArrayList<String>();
+		for (String str : output.split("},{")) {
+			array.add(str);
+		}
+		ArrayList<JSONObject> jsonArray = new ArrayList<JSONObject>();
 		for (String str : array) {
-			jsonArray.add(new JSONObject("{" + str + "}"));
-		} 
+			try {
+				jsonArray.add(new JSONObject("{" + str + "}"));
+			} catch (JSONException e) {
+				System.out.println(str);
+				e.printStackTrace();
+			}
+
+		}
+
 		return jsonArray;
 	}
 
