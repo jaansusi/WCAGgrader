@@ -15,7 +15,9 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.lang.ArrayIndexOutOfBoundsException;
 import java.lang.NoSuchMethodError;
+import java.util.regex.PatternSyntaxException;
 
 
 public class Parser {
@@ -92,21 +94,20 @@ public class Parser {
 		//Remove the first and last 2 symbols
 		//Then split it into different pieces at },{
 		//Then add {} around the pieces and we have a list of JSONObjects
+		System.out.println("Output len is: " + output.length());
+		if (output.length() == 0) {
+			return null;
+		}
 		output = output.substring(2, output.length()-2);
-		//System.out.println(output + "\n");
-		for (String str : output.split("},{")) {
-			//System.out.println(str);
-		}
-		ArrayList<String> array = new ArrayList<String>();
-		for (String str : output.split("},{")) {
-			array.add(str);
-		}
+		
 		ArrayList<JSONObject> jsonArray = new ArrayList<JSONObject>();
-		for (String str : array) {
+
+		for (String str : output.split("\\},\\{")) {
 			try {
 				jsonArray.add(new JSONObject("{" + str + "}"));
 			} catch (JSONException e) {
-				System.out.println(str);
+				//For debug
+				//System.out.println(str);
 				e.printStackTrace();
 			}
 

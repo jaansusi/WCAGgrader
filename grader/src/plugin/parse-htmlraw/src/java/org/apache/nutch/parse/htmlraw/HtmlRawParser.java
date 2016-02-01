@@ -91,13 +91,17 @@ public class HtmlRawParser implements HtmlParseFilter {
 			JSONObject j = new JSONObject();
 
 			URL domUrl = new URL(content.getUrl());
-			System.out.println(grader);
+			//System.out.println(grader);
 			if (grader.equals("AL")) {
 				j = p.accessLint(f.getAbsolutePath());
 				sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile());
 			} else if (grader.equals("HTML")) {
 				ArrayList<JSONObject> array = p.pa11y(f.getAbsolutePath());
-				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
+				if (array != null)
+					if (sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile()) == true)
+						System.out.println("upload successful");
+					else
+						System.out.println("upload failed");
 			}
 			
 
@@ -115,8 +119,8 @@ public class HtmlRawParser implements HtmlParseFilter {
 		//Delete created file
 		//>---------------------------------------------------------->
 		if (f.delete())
-			System.out.println("\t and deleted.");
-		else System.out.println("\t but not deleted.");
+			System.out.println("\t and file deleted.");
+		else System.out.println("\t but file not deleted.");
 		//<----------------------------------------------------------<
 		//LOG.info(htmlraw);
 		

@@ -3,6 +3,7 @@ import java.sql.*;
 import org.json.JSONObject;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.text.SimpleDateFormat;
 
 public class Uploader {
@@ -53,9 +54,29 @@ public class Uploader {
 		return true;
 	}
 	public Boolean postGradesCodeSniffer(ArrayList<JSONObject> array, String domain, String url) {
-		for (JSONObject json : array) {
-			System.out.println(json.get("code"));
+		
+		//JSONObject keys
+		//[selector, message, context, typeCode, code, type]
+		int i = 0, j = 0;
+		HashSet<String> uniqueErr = new HashSet<String>(), uniqueWarn = new HashSet<String>();
+		for (JSONObject obj : array) {
+			if (Integer.parseInt(obj.get("typeCode").toString()) == 1) {
+				//System.out.println(obj.get("code"));
+				i++;
+				uniqueErr.add(obj.get("code").toString());
+			}
+			if (Integer.parseInt(obj.get("typeCode").toString()) == 2) {
+				j++;
+				uniqueWarn.add(obj.get("code").toString());
+			}
 		}
+
+		System.out.println("Elements in answer set: " + array.size());
+		System.out.println("Errors : " + i);
+		System.out.println("Of those, unique count: " + uniqueErr.size());
+		System.out.println("Warnings : " + j);
+		System.out.println("Of those, unique count: " + uniqueWarn.size());
+
 		
 		return false;
 	}
