@@ -4,6 +4,7 @@ import org.json.JSONObject;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.text.SimpleDateFormat;
 
 public class Uploader {
@@ -58,6 +59,7 @@ public class Uploader {
 		//JSONObject keys
 		//[selector, message, context, typeCode, code, type]
 		int i = 0, j = 0;
+		//To understand how many different elements there are
 		HashSet<String> uniqueErr = new HashSet<String>(), uniqueWarn = new HashSet<String>();
 		for (JSONObject obj : array) {
 			if (Integer.parseInt(obj.get("typeCode").toString()) == 1) {
@@ -71,9 +73,15 @@ public class Uploader {
 			}
 		}
 
-		System.out.println("Elements in answer set: " + array.size());
+		System.out.println("Element count in answer set: " + array.size());
 		System.out.println("Errors : " + i);
 		System.out.println("Of those, unique count: " + uniqueErr.size());
+		Iterator it = uniqueErr.iterator();
+		System.out.println(" and they are: ");
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
+		System.out.println();
 		System.out.println("Warnings : " + j);
 		System.out.println("Of those, unique count: " + uniqueWarn.size());
 
