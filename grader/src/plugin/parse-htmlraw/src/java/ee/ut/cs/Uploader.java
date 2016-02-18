@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.text.SimpleDateFormat;
-
+import java.lang.String;
 public class Uploader {
 
 	private static String host = "jdbc:mysql://localhost:3306/mydb";
@@ -79,12 +79,24 @@ public class Uploader {
 		Iterator it = uniqueErr.iterator();
 		System.out.println(" and they are: ");
 		while (it.hasNext()) {
-			System.out.println(it.next());
+			String[] str = it.next().toString().split("\\.");
+			String out = str[1].substring(str[1].length() - 1) + "_" + str[2].substring(str[2].length() - 3);
+			//TO-DO split -> replace
+			//out = out.split("_").join(".");
+			System.out.println(str[0] + " - " + out);
 		}
 		System.out.println();
 		System.out.println("Warnings : " + j);
 		System.out.println("Of those, unique count: " + uniqueWarn.size());
-
+		it = uniqueWarn.iterator();
+		System.out.println(" and they are: ");
+		while (it.hasNext()) {
+			String[] str = it.next().toString().split("\\.");
+			String out = str[1].substring(str[1].length() - 1) + "_" + str[2].substring(str[2].length() - 3);
+			//TO-DO split -> replace
+			//out = out.split("_").join(".");
+			System.out.println(str[0] + " - " + out);
+		}
 		
 		return false;
 	}
