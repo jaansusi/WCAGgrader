@@ -97,13 +97,18 @@ public class Uploader {
 		while (it.hasNext()) {
 			//Original output: WCAG2AA.Principle1.Guideline1_3.1_3_1.H48
 			String next = it.next().toString();
-			String[] output = parseOutput(next);
-			
+			String[] output = parseSnifferOutput(next);
+			if (output != null) {
+				String sql = "INSERT INTO `html_codesniffer` (" + fields + extraFields + ") VALUES (" + values + extraValues + ");";
+				for (String str : output) {
+					System.out.println(str);
+				}
+			}
 		}
 		
 		return false;
 	}
-	private String[] parseOutput(String next) {
+	private void uploadSnifferOutput(String next) {
 		
 		//To check whether output is right, uncomment next line
 		//System.out.print("Original: " + next + " --- ");
@@ -119,7 +124,12 @@ public class Uploader {
 			//Principle and guideline number, e.g "1.1.3"
 			String guideline = m.group(2) + "." + m.group(3) + "." + m.group(4);
 			System.out.println(guideline);
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss");
+			String extraValues = "'" + sdf.format(new Date()).toString() + "'";
+			
 		}
-		return ({WCAGlevel, guideline});
+		
+		
 	}
 }
