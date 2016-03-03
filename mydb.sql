@@ -1,4 +1,21 @@
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 ;
+-- ----------------------------------------------------------------------------
+-- MySQL Workbench Migration
+-- Migrated Schemata: mydb2
+-- Source Schemata: mydb
+-- Created: Fri Mar  4 01:13:39 2016
+-- ----------------------------------------------------------------------------
+
+SET FOREIGN_KEY_CHECKS = 0;;
+
+-- ----------------------------------------------------------------------------
+-- Schema mydb2
+-- ----------------------------------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `mydb` ;
+
+-- ----------------------------------------------------------------------------
+-- Table mydb.access_lint
+-- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`access_lint` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `Domain` VARCHAR(45) NULL DEFAULT NULL,
@@ -32,10 +49,22 @@ CREATE TABLE IF NOT EXISTS `mydb`.`access_lint` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2116
+AUTO_INCREMENT = 12
 DEFAULT CHARACTER SET = latin1;
-CREATE TABLE IF NOT EXISTS `mydb`.`html_codesniffer` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC));
 
+-- ----------------------------------------------------------------------------
+-- Table mydb.html_codesniffer
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`html_codesniffer` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Domain` VARCHAR(45) NULL DEFAULT NULL,
+  `Url` VARCHAR(200) NULL DEFAULT NULL,
+  `Time` DATETIME NULL DEFAULT NULL,
+  `Errors` VARCHAR(500) NULL DEFAULT NULL,
+  `Notices` VARCHAR(500) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = latin1;
+SET FOREIGN_KEY_CHECKS = 1;;
