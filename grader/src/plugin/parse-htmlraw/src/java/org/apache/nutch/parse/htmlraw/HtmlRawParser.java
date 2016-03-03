@@ -93,8 +93,12 @@ public class HtmlRawParser implements HtmlParseFilter {
 			URL domUrl = new URL(content.getUrl());
 			//System.out.println(domUrl);
 			if (grader.equals("AL")) {
-				j = p.accessLint(f.getAbsolutePath());
-				if(sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile()) == true)
+				try {
+					j = p.accessLint(f.getAbsolutePath());
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+					if(sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile()) == true)
 					System.out.println("upload successful");
 				else
 					System.out.println("upload failed");;

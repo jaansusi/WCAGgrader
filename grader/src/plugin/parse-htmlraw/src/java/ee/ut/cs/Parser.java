@@ -25,12 +25,10 @@ import java.util.regex.PatternSyntaxException;
 
 public class Parser {
 	public JSONObject accessLint (String fileAddress) throws IOException, JSONException {
-		//Audit the given file
-		//>----------------------------------------------->
-		//System.out.println(fileAddress);
 		
-		//TO-DO
-		//Work out a workflow that does not require two separate ifs
+		/*
+		 * Run process and read output
+		 */
 		Process process = new ProcessBuilder("access_lint", "audit", fileAddress).start();
 		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
@@ -39,39 +37,50 @@ public class Parser {
 		String answer = "";
 		br.readLine();
 		while ((line = br.readLine()) != null) {
+			//access_lint prints on "complete" on the last line, ignore that
 			if (line != "complete")
+				//Replace with colons to achieve accepted json rules
 				answer += line.replaceAll("=>", ":") + "\n";
 		}
-		JSONObject json = null;
+		
+		JSONObject json;
 		try	{
 			json = new JSONObject(answer);
 		} catch (JSONException e) {
-			System.out.println(answer);
-			throw new JSONException(e);
+			//No point in throwing it up anymore, have to deal with it anyway somewhere
+			System.out.println("JSON was not created as an object, prob faulty output: \n" + answer);
+			e.printStackTrace();
+			//If json is not satisfactory, then no point in continuing
+			return null;
 		}
-		//json.keySet();
 		
-		//<-----------------------------------------------<
 		
-        
-        
-        //Return results
-        //>----------------------------------------------->
         /*
          * Find database values based on the key below and return the answer
          */
         JSONArray json2;
         JSONObject jsonAns = new JSONObject();
         
-		System.out.println(JSONObject.getNames(json));
-		String jsonTemp;
+		//System.out.println(JSONObject.getNames(json));
+		
+        String jsonTemp;
 		JSONObject jsonTranslate = getTransformer();
+		
+		//Iterate over every element in JSON object
+		
+		//json.keySet() = [FAIL, NA, PASS]
         for (String el : json.keySet()) {
-        	System.out.println(el);
+        	
+        	//json2 contains all the elements with current value (FAIL/NA/PASS)
         	json2 = json.getJSONArray(el);
+        	
+        	//Iterate over every FAIL/NA/PASS element and add them to SQL
         	for (int i = 0; i < json2.length(); i++) {
+        		//Titles are received because based on them, the rules are found from
+        		//the jsonTranslate object which contains the corresponding titles and guideline numbers
         		jsonTemp = new JSONObject(json2.get(i).toString()).get("title").toString();
-        		//System.out.println(jsonTranslate.get(jsonTemp));
+        		
+        		//The rule is added with the value of whether it passed, failed or was not applicable
         		jsonAns.append(jsonTranslate.get(jsonTemp).toString(), el);
         	}
 		}
@@ -82,6 +91,9 @@ public class Parser {
 
 	public String[] pa11y(String fileAddress) throws IOException, JSONException {
 
+		/*
+		 * Run process and read output
+		 */
 		Process process = new ProcessBuilder("pa11y", "-r", "json", "file://" + fileAddress).start();
 		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
@@ -91,26 +103,31 @@ public class Parser {
 		while ((line = br.readLine()) != null) {
 			output += line;
 		}
-
-		//TO-DO Remove this horrible ghetto rig
-
-		//Remove the first and last 2 symbols
-		//Then split it into different pieces at },{
-		//Then add {} around the pieces and we have a list of JSONObjects
-		System.out.println("Output len is: " + output.length());
+		
+		/*
+		 * WARNING! Horrible ghetto rig
+		 * 
+		 * Remove the first and last 2 symbols
+		 * Then split it into different pieces at },{
+		 * Then add {} around the pieces and BAM! We have a list of JSONObjects!
+		 */
+		//System.out.println("Output len is: " + output.length());
 		if (output.length() == 0) {
 			return null;
 		}
+		//Remove first and last symbols
 		output = output.substring(2, output.length()-2);
 		
 		ArrayList<JSONObject> jsonArray = new ArrayList<JSONObject>();
-
+		
+		//Split and iterate over split elements
 		for (String str : output.split("\\},\\{")) {
+			//Try creating a new JSONObject
 			try {
 				jsonArray.add(new JSONObject("{" + str + "}"));
 			} catch (JSONException e) {
-				//For debug
-				//System.out.println(str);
+				//If can't, print stacktrace but continue
+				System.out.println("Couldn't create a JSONObject into ArrayList with: \n" + str);
 				e.printStackTrace();
 			}
 
