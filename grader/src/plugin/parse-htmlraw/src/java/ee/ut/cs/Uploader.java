@@ -62,26 +62,42 @@ public class Uploader {
 		//Check if both errors and warnings were present and add to sql
 		String outputErr = outputs[0];
 		String outputWarn = outputs[1];
-		
+		String values = "";
 		
 		if (outputErr != null) {
-			System.out.println(outputErr);
+			//System.out.println(outputErr);
 			//Add to sql
+			values += outputErr;
 		}
+		
+		if (outputErr != null && outputWarn != null)
+			values += ", ";
+		
 		if (outputWarn != null) {
-			System.out.println(outputWarn);
+			//System.out.println(outputWarn);
 			//Add to sql
+			values += outputWarn;
 		}
 		
 		//Start generating the sql
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss");
-		String time = "'" + sdf.format(new Date()).toString() + "'";
-		String values = ", ''";
-		String sql = "INSERT INTO `html_codesniffer` ('domain', 'url', 'time', 'errors', 'notices') VALUES "
-				+ "(" + time + values + ");";
+		String time = "'" + sdf.format(new Date()).toString() + "', ";
+		String sql = "INSERT INTO `html_codesniffer` (`domain`, `url`, `time`, `errors`, `notices`) VALUES " + "('" + domain + "', '" + url + "', " + time + values + ");";
+		System.out.println(sql);
 		
-		return false;
+		try {
+			Connection con = DriverManager.getConnection(host, user, pass);
+			Statement query = con.createStatement();
+			query.execute(sql);
+			return true;
+		} catch (SQLException e) {
+			System.out.println(e);
+		    System.out.println("SQLException: " + e.getMessage());
+		    System.out.println("SQLState: " + e.getSQLState());
+		    System.out.println("VendorError: " + e.getErrorCode());
+			return false;
+		}
 	}
 	
 }

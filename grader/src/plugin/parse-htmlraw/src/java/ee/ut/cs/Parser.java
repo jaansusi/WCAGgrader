@@ -168,6 +168,8 @@ public class Parser {
 		String[] outputs = new String[2];
 		outputs[0] = outputErr;
 		outputs[1] = outputWarn;
+		if (outputErr.length() == 0 && outputWarn.length() == 0)
+			return null;
 		return outputs;
 	}
 	
@@ -175,7 +177,7 @@ public class Parser {
 		
 		//Cycle through the content (Errors/Warnings)
 		
-		String parsed = "";
+		String parsed = "'";
 		
 		for (String next : content) {
 			
@@ -197,12 +199,12 @@ public class Parser {
 				
 				//Add to returning string
 				
-				parsed += "'" + WCAGlevel + guideline+ "',";
+				parsed += WCAGlevel + guideline+ ", ";
 			}
 		}
 		//Cut out the last comma
 		if (parsed.length() > 0)
-			return parsed.substring(0, parsed.length() - 1);
+			return parsed.substring(0, parsed.length() - 2) + "'";
 		return null;
 		
 		

@@ -91,7 +91,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 			JSONObject j = new JSONObject();
 
 			URL domUrl = new URL(content.getUrl());
-			//System.out.println(grader);
+			//System.out.println(domUrl);
 			if (grader.equals("AL")) {
 				j = p.accessLint(f.getAbsolutePath());
 				if(sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile()) == true)
