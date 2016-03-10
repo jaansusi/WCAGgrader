@@ -105,8 +105,6 @@ public class Parser {
 		}
 		
 		/*
-		 * WARNING! Horrible ghetto rig
-		 * 
 		 * Remove the first and last 2 symbols
 		 * Then split it into different pieces at },{
 		 * Then add {} around the pieces and BAM! We have a list of JSONObjects!
@@ -148,26 +146,47 @@ public class Parser {
 				j++;
 				uniqueWarn.add(obj.get("code").toString());
 			}
+			
+			//Add to CSV
+			
+			try {
+				File f = new File("../data.csv");
+				FileWriter fw = new FileWriter(f.getAbsolutePath(), true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				String data = "";
+				for (String key : obj.keySet()) {
+					data += "\"" + obj.get(key).toString().replace(System.getProperty("line.separator"), "") + "\", ";
+				}
+				data = data.substring(0, data.length()-2) + System.getProperty("line.separator");
+				System.out.print(data);
+				bw.write(data);
+				
+				bw.close();
+				fw.close();
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 
-		System.out.println("Element count in answer set: " + jsonArray.size());
-		System.out.println("Errors : " + i);
-		System.out.println("Of those, unique count: " + uniqueErr.size());
+		//System.out.println("Element count in answer set: " + jsonArray.size());
+		//System.out.println("Errors : " + i);
+		//System.out.println("Of those, unique count: " + uniqueErr.size());
 		//Iterate over unique errors
 		Iterator it = uniqueErr.iterator();
-		System.out.println(" and they are: ");
+		//System.out.println(" and they are: ");
 		ArrayList<String> errors = new ArrayList<String>();
 		while (it.hasNext()) {
 			String next = it.next().toString();
 			errors.add(next);
 		}
-		System.out.println();
+		//System.out.println();
 		
-		System.out.println("Warnings : " + j);
-		System.out.println("Of those, unique count: " + uniqueWarn.size());
+		//System.out.println("Warnings : " + j);
+		//System.out.println("Of those, unique count: " + uniqueWarn.size());
 		//Iterate over unique warnings
 		it = uniqueWarn.iterator();
-		System.out.println(" and they are: ");
+		//System.out.println(" and they are: ");
 		ArrayList<String> warnings = new ArrayList<String>();
 		while (it.hasNext()) {
 			//Original output: WCAG2AA.Principle1.Guideline1_3.1_3_1.H48
@@ -208,11 +227,11 @@ public class Parser {
 				
 				//A, AA or AAA
 				String WCAGlevel = m.group(1);
-				System.out.print(WCAGlevel + " - ");
+				//System.out.print(WCAGlevel + " - ");
 				
 				//Principle and guideline number, e.g "1.1.3"
 				String guideline = m.group(2) + "." + m.group(3) + "." + m.group(4);
-				System.out.println(guideline);
+				//System.out.println(guideline);
 				
 				//Add to returning string
 				

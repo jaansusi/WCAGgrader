@@ -1,6 +1,13 @@
 <html>
+<head>
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
+</head>
+
 <?php
-require 'data.php';
+require 'data.conf';
 $mysqli = new mysqli($server, $user, $pass, $db, 3306);
 if ($mysqli->connect_errno) {
 	echo "Failed to connect to MYSQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_errno; 

@@ -98,7 +98,7 @@ public class Uploader {
 		try {
 			Connection con = DriverManager.getConnection(host, user, pass);
 			Statement query = con.createStatement();
-			query.execute(sql);
+			//query.execute(sql);
 			//If upload successful, return true
 			return true;
 		} catch (SQLException e) {

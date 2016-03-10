@@ -92,6 +92,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 
 			URL domUrl = new URL(content.getUrl());
 			//System.out.println(domUrl);
+			
 			if (grader.equals("AL")) {
 				try {
 					j = p.accessLint(f.getAbsolutePath());
@@ -135,9 +136,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 		LOG.error("unable to convert content into string");
 	}
 	
-	//metadata.add("htmlraw", htmlraw);
-    //LOG.info("Added parse meta tag: \"htmlraw\", length="+htmlraw.length());
-    
+	
     return parseResult;
   }
 }
