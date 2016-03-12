@@ -8,6 +8,9 @@ import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 import java.net.URL;
 
 import org.apache.commons.logging.Log;
@@ -27,6 +30,7 @@ import ee.ut.cs.Uploader;
 import java.util.Properties;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.HashMap;
 
 
 /** 
@@ -54,11 +58,12 @@ public class HtmlRawParser implements HtmlParseFilter {
 	//Metadata metadata = parse.getData().getParseMeta();
 	//LOG.info(metadata);
 	byte[] contentInOctets = content.getContent();
+	
 	String htmlraw = new String();
 	try {
 		htmlraw = new String (contentInOctets,"UTF-8");
 		//Create random file
-		//>---------------------------------------------------------->
+		
 		Integer rand;
 		int min = 1;
 		int max = 10000;
@@ -66,74 +71,69 @@ public class HtmlRawParser implements HtmlParseFilter {
 			rand = new Random().nextInt((max - min) + 1) + min;
 		} while (new File("TempFile-" + rand + ".html").exists());
 		File f = new File("TempFile-" + rand + ".html");
-		System.out.println(f.getAbsolutePath() + " created");
-				
-		try {
-			FileWriter fw = new FileWriter(f.getAbsolutePath());
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(htmlraw);
-			bw.close();
-			fw.close();
+		//System.out.println(f.getAbsolutePath() + " created");
 
-		//<----------------------------------------------------------<
+		FileWriter fw = new FileWriter(f.getAbsolutePath());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(htmlraw);
+		bw.close();
+		fw.close();
 		
+		BufferedReader br2 = new BufferedReader(new FileReader("./cur_warc.txt"));
+		String warc = br2.readLine();
+		//System.out.println(warc);
+		br2.close();
+
+	
 		//Make a decision based on the conf file located in root folder
-			Properties prop = new Properties();
-			InputStream is = new FileInputStream("plugin-conf.cfg");
-			prop.load(is);
-			String grader = prop.getProperty("GRADER");
-			is.close();
+		Properties prop = new Properties();
+		InputStream is = new FileInputStream("plugin-conf.cfg");
+		prop.load(is);
+		String grader = prop.getProperty("GRADER");
+		is.close();
 
-		//Audit
-		//>---------------------------------------------------------->
-			Parser p = new Parser();
-			Uploader sql = new Uploader();
-			JSONObject j = new JSONObject();
+		/*
+		 * Audit
+		 */
+		
+		Parser p = new Parser();
+		Uploader sql = new Uploader();
+		JSONObject j = new JSONObject();
 
-			URL domUrl = new URL(content.getUrl());
-			//System.out.println(domUrl);
-			
-			if (grader.equals("AL")) {
-				try {
-					j = p.accessLint(f.getAbsolutePath());
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-					if(sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile()) == true)
-					System.out.println("upload successful");
-				else
-					System.out.println("upload failed");;
-			} else if (grader.equals("HTML")) {
-				String[] array = p.pa11y(f.getAbsolutePath());
-				if (array != null)
-					if (sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile()) == true)
-						System.out.println("upload successful");
-					else
-						System.out.println("upload failed");
+		URL domUrl = new URL(content.getUrl());
+		//System.out.println(domUrl);
+		
+		if (grader.equals("AL")) {
+			try {
+				j = p.accessLint(f.getAbsolutePath());
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-			
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (JSONException e) {
-			e.printStackTrace();
+				if(sql.postGradesAccess(j, domUrl.getHost(), domUrl.getFile()) == true)
+				System.out.println("upload successful");
+			else
+				System.out.println("upload failed");;
+		} else if (grader.equals("HTML")) {
+			HashMap<String, String> array = p.pa11y(f.getAbsolutePath(), warc, domUrl.getHost()+domUrl.getFile());
+			if (array != null)
+				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
+				//if (sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile()) == true)
+					//System.out.println("upload successful");
+				//else
+					//System.out.println("upload failed");
 		}
-		//<----------------------------------------------------------<
-		
-		//Delete created file
-		//>---------------------------------------------------------->
-		if (f.delete())
-			System.out.println("\t and file deleted.");
-		else System.out.println("\t but file not deleted.");
-		//<----------------------------------------------------------<
-		//LOG.info(htmlraw);
-		
+		f.delete();
+//		if (f.delete())
+//			System.out.println("\t and file deleted.");
+//		else System.out.println("\t but file not deleted.");
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
 	} catch (UnsupportedEncodingException e) {
-		LOG.error("unable to convert content into string");
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	} catch (JSONException e) {
+		e.printStackTrace();
 	}
 	
 	

@@ -3,6 +3,7 @@ package ee.ut.cs;
 import java.sql.*;
 import org.json.JSONObject;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.lang.String;
@@ -62,28 +63,26 @@ public class Uploader {
 		
 		
 	}
-	public Boolean postGradesCodeSniffer(String[] outputs, String domain, String url) {
+	public Boolean postGradesCodeSniffer(HashMap<String, String> input, String domain, String url) {
 		//Returns true on successful upload, otherwise false
 		
-		String outputErr = outputs[0];
-		String outputWarn = outputs[1];
-		String values = "";
+		
+		String columns = "", values = "";
 		
 		//If not null, add to sql
-		if (outputErr != null) {
+		if (input != null) {
 			//System.out.println(outputErr);
-			values += outputErr;
+			for (String str : input.keySet()) {
+				columns += "`" + str + "`, ";
+				values += "'" + input.get(str) + "', ";
+			}
+			columns = columns.substring(0, columns.length()-2);
+			values = values.substring(0, values.length()-2);
 		}
 		
 		//If both are not null, add a comma between them
-		if (outputErr != null && outputWarn != null)
-			values += ", ";
-
-		//If not null, add to sql
-		if (outputWarn != null) {
-			//System.out.println(outputWarn);
-			values += outputWarn;
-		}
+		
+		
 		
 		//Start generating the sql
 		
@@ -92,20 +91,17 @@ public class Uploader {
 		String time = "'" + sdf.format(new Date()).toString() + "', ";
 		
 		//Combine everything
-		String sql = "INSERT INTO `html_codesniffer` (`domain`, `url`, `time`, `errors`, `notices`) VALUES " + "('" + domain + "', '" + url + "', " + time + values + ");";
+		String sql = "INSERT INTO `html_codesniffer` (`domain`, `url`, `time`, " + columns + ") VALUES " + "('" + domain + "', '" + url + "', " + time + values + ");";
 		//System.out.println(sql);
 		
 		try {
 			Connection con = DriverManager.getConnection(host, user, pass);
 			Statement query = con.createStatement();
-			//query.execute(sql);
+			query.execute(sql);
 			//If upload successful, return true
 			return true;
 		} catch (SQLException e) {
-			System.out.println(e);
 		    System.out.println("SQLException: " + e.getMessage());
-		    System.out.println("SQLState: " + e.getSQLState());
-		    System.out.println("VendorError: " + e.getErrorCode());
 		    //If error is thrown, return that upload failed
 			return false;
 		}

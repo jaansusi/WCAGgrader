@@ -10,6 +10,7 @@ import java.io.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.regex.*;
 import java.util.Iterator;
 import java.util.HashSet;
@@ -89,7 +90,7 @@ public class Parser {
 		//<-----------------------------------------------<
 	}
 
-	public String[] pa11y(String fileAddress) throws IOException, JSONException {
+	public HashMap<String, String> pa11y(String fileAddress, String warc, String url) throws IOException, JSONException {
 
 		/*
 		 * Run process and read output
@@ -153,12 +154,14 @@ public class Parser {
 				File f = new File("../data.csv");
 				FileWriter fw = new FileWriter(f.getAbsolutePath(), true);
 				BufferedWriter bw = new BufferedWriter(fw);
-				String data = "";
+				
+				
+				String data = "\"" + warc + "\", \"" + url + "\", ";
 				for (String key : obj.keySet()) {
 					data += "\"" + obj.get(key).toString().replace(System.getProperty("line.separator"), "") + "\", ";
 				}
 				data = data.substring(0, data.length()-2) + System.getProperty("line.separator");
-				System.out.print(data);
+				//System.out.print(data);
 				bw.write(data);
 				
 				bw.close();
@@ -172,18 +175,28 @@ public class Parser {
 		//System.out.println("Element count in answer set: " + jsonArray.size());
 		//System.out.println("Errors : " + i);
 		//System.out.println("Of those, unique count: " + uniqueErr.size());
+		
+		//Create returned object
+		HashMap<String, String> returned = new HashMap<String, String>();
+		
+		
+		
 		//Iterate over unique errors
 		Iterator it = uniqueErr.iterator();
 		//System.out.println(" and they are: ");
 		ArrayList<String> errors = new ArrayList<String>();
 		while (it.hasNext()) {
 			String next = it.next().toString();
-			errors.add(next);
+			//System.out.println(parse(next));
+			returned.put(parse(next), "ERROR");
+			errors.add(parse(next));
 		}
 		//System.out.println();
 		
 		//System.out.println("Warnings : " + j);
 		//System.out.println("Of those, unique count: " + uniqueWarn.size());
+	
+		
 		//Iterate over unique warnings
 		it = uniqueWarn.iterator();
 		//System.out.println(" and they are: ");
@@ -191,59 +204,37 @@ public class Parser {
 		while (it.hasNext()) {
 			//Original output: WCAG2AA.Principle1.Guideline1_3.1_3_1.H48
 			String next = it.next().toString();
-			warnings.add(next);
+			if (!returned.containsKey(next))
+				returned.put(parse(next), "WARNING");
+			
+			//System.out.println(parse(next));
+			warnings.add(parse(next));
 		}
 		
-		//Parse the json
 		
-		String outputErr = parseSnifferOutput(warnings);
-		String outputWarn = parseSnifferOutput(errors);
 		
 		//Return them
-		
-		String[] outputs = new String[2];
-		outputs[0] = outputErr;
-		outputs[1] = outputWarn;
-		if (outputErr.length() == 0 && outputWarn.length() == 0)
+		if (returned.size() == 0)
 			return null;
-		return outputs;
+		return returned;
 	}
 	
-	private String parseSnifferOutput(ArrayList<String> content) {
+	private String parse (String entry) {
+		Pattern p = Pattern.compile("WCAG2(\\S+)\\.Principle(\\d)\\.Guideline(\\d)_(\\d)\\..*");
+		Matcher m = p.matcher(entry);
 		
-		//Cycle through the content (Errors/Warnings)
-		
-		String parsed = "'";
-		
-		for (String next : content) {
+		if (m.find()) {
+			//A, AA or AAA
+			String WCAGlevel = m.group(1);
+			//System.out.print(WCAGlevel + " - ");
 			
-			//To check whether output is right, uncomment next line
-			//System.out.print("Original: " + next + " --- ");
+			//Principle and guideline number, e.g "1.1.3"
+			String guideline = m.group(2) + "." + m.group(3) + "." + m.group(4);
+			//System.out.println(guideline);
 			
-			Pattern p = Pattern.compile("WCAG2(\\S+)\\.Principle(\\d)\\.Guideline(\\d)_(\\d)\\..*");
-			Matcher m = p.matcher(next);
-			
-			if (m.find()) {
-				
-				//A, AA or AAA
-				String WCAGlevel = m.group(1);
-				//System.out.print(WCAGlevel + " - ");
-				
-				//Principle and guideline number, e.g "1.1.3"
-				String guideline = m.group(2) + "." + m.group(3) + "." + m.group(4);
-				//System.out.println(guideline);
-				
-				//Add to returning string
-				
-				parsed += WCAGlevel + guideline+ ", ";
-			}
+			return guideline;
 		}
-		//Cut out the last comma
-		if (parsed.length() > 0)
-			return parsed.substring(0, parsed.length() - 2) + "'";
 		return null;
-		
-		
 	}
 
 	private JSONObject getTransformer() {
