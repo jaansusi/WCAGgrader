@@ -5,3 +5,4 @@ grader/segments/**
 grader/*.log
 .recommenders/
 .metadata/
+data.csv
