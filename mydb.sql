@@ -1,21 +1,9 @@
--- ----------------------------------------------------------------------------
--- MySQL Workbench Migration
--- Migrated Schemata: mydb2
--- Source Schemata: mydb
--- Created: Fri Mar  4 01:13:39 2016
--- ----------------------------------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 ;
+USE `mydb` ;
 
-SET FOREIGN_KEY_CHECKS = 0;;
-
--- ----------------------------------------------------------------------------
--- Schema mydb2
--- ----------------------------------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
-CREATE SCHEMA IF NOT EXISTS `mydb` ;
-
--- ----------------------------------------------------------------------------
--- Table mydb.access_lint
--- ----------------------------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `mydb`.`access_lint`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`access_lint` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `Domain` VARCHAR(45) NULL DEFAULT NULL,
@@ -49,22 +37,44 @@ CREATE TABLE IF NOT EXISTS `mydb`.`access_lint` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 12
+AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = latin1;
 
--- ----------------------------------------------------------------------------
--- Table mydb.html_codesniffer
--- ----------------------------------------------------------------------------
+
+-- -----------------------------------------------------
+-- Table `mydb`.`html_codesniffer`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`html_codesniffer` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `Domain` VARCHAR(45) NULL DEFAULT NULL,
-  `Url` VARCHAR(200) NULL DEFAULT NULL,
+  `Url` VARCHAR(400) NULL DEFAULT NULL,
   `Time` DATETIME NULL DEFAULT NULL,
-  `Errors` VARCHAR(500) NULL DEFAULT NULL,
-  `Notices` VARCHAR(500) NULL DEFAULT NULL,
+  `1.1.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `1.3.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `1.4.3` VARCHAR(45) NULL DEFAULT 'PASS',
+  `1.4.6` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.1.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.1.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.2.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.2.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.4.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.4.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.4.8` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.1.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.1.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.1.6` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.2.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.2.5` VARCHAR(45) NULL DEFAULT 'PASS',
+  `4.1.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `4.1.2` VARCHAR(45) NULL DEFAULT 'PASS',
+  `4.4.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `1.1.4` VARCHAR(45) NULL DEFAULT 'PASS',
+  `1.1.3` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.3.1` VARCHAR(45) NULL DEFAULT 'PASS',
+  `2.2.4` VARCHAR(45) NULL DEFAULT 'PASS',
+  `3.3.2` VARCHAR(45) NULL DEFAULT 'PASS',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 182
 DEFAULT CHARACTER SET = latin1;
-SET FOREIGN_KEY_CHECKS = 1;;
