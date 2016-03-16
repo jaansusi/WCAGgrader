@@ -1,11 +1,14 @@
 #!/bin/bash/
 cd /home/jaan/WCAGgrader/grader
-for i in $(cat /warcs/ser_manifest); do
+comm --nocheck-order -3 ../warcs ../parsed_warcs.txt > ../warcs_diff.txt
+for i in $(cat ../warcs_diff.txt); do
+	echo -n downloading $i...
 	sshpass -p '' scp jaan@deepweb.ut.ee:/mnt/$i .
-	echo $i downloaded
+	echo downloaded
 	echo $i > cur_warc.txt
-	echo -n $i ' - ' >> ../parsed_warcs.txt
-	/usr/bin/time -af %E -o ../parsed_warcs.txt bin/nutchwax import cur_warc.txt
+	echo -n $i - > parsed_warcs_time.txt
+	/usr/bin/time -af %E -o ../parsed_warcs_time.txt bin/nutchwax import cur_warc.txt
+	echo $i >> ../parsed_warcs.txt
 	echo $i audited
 	rm $i
 done

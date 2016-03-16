@@ -95,7 +95,7 @@ public class Parser {
 		/*
 		 * Run process and read output
 		 */
-		Process process = new ProcessBuilder("pa11y", "-r", "json", "file://" + fileAddress).start();
+		Process process = new ProcessBuilder("timeout", "30", "pa11y", "-r", "json", "file://" + fileAddress).start();
 		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);

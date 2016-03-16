@@ -568,7 +568,7 @@
 
 <property>
   <name>fetcher.threads.per.host</name>
-  <value>1</value>
+  <value>4</value>
   <description>This number is the maximum number of threads that
     should be allowed to access a host at one time.</description>
 </property>

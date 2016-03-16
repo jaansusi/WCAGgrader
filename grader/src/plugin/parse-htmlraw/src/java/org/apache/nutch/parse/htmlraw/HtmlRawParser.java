@@ -118,9 +118,9 @@ public class HtmlRawParser implements HtmlParseFilter {
 			if (array != null)
 				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
 				//if (sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile()) == true)
-					//System.out.println("upload successful");
+				//	System.out.println("upload successful");
 				//else
-					//System.out.println("upload failed");
+				//	System.out.println("upload failed");
 		}
 		f.delete();
 //		if (f.delete())
@@ -136,7 +136,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 		e.printStackTrace();
 	}
 	
-	
+	System.out.print(".");
     return parseResult;
   }
 }
