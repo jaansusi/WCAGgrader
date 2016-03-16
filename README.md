@@ -4,9 +4,7 @@ Install gem with ruby "apt-get install ruby"
 
 Install access_lint via gem "gem install access_lint"
 
-Install phantomjs for access_lint
-
-WCAG scores are uploaded to the access_lint table correctly.
+Install phantomjs
 
 For HTML CodeSniffer, do this:
 
@@ -20,6 +18,7 @@ Then:
 
 npm install -g pa11y
 
+sudo apt-get install phantomjs
 
 Currently working on the web interface
 
