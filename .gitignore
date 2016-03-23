@@ -6,3 +6,4 @@ grader/*.log
 .recommenders/
 .metadata/
 data.csv
+*.warc
