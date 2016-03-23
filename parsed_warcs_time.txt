@@ -24,3 +24,21 @@ Command exited with non-zero status 255
 0:03.10
 Command exited with non-zero status 130
 32:35.61
+Command exited with non-zero status 130
+30:00.28
+Command exited with non-zero status 130
+0:06.80
+Command exited with non-zero status 130
+0:01.82
+Command exited with non-zero status 130
+0:00.33
+Command terminated by signal 2
+0:00.13
+Command terminated by signal 2
+0:00.16
+Command exited with non-zero status 130
+0:00.19
+Command exited with non-zero status 130
+0:00.22
+Command terminated by signal 2
+0:00.17

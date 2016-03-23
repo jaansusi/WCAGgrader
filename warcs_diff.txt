@@ -1,13 +1,3 @@
-628-8-20150522075454-00147-Debian-70-wheezy-64-minimal.warc
-30-5-20141103134454-00057-Debian-70-wheezy-64-minimal.warc
-26-5-20141027153652-00061-Debian-70-wheezy-64-minimal.warc
-681-8-20150708102704-00286-Debian-70-wheezy-64-minimal.warc
-689-8-20150716152719-00315-Debian-70-wheezy-64-minimal.warc
-684-8-20150711094208-00221-Debian-70-wheezy-64-minimal.warc
-16-2-20141017040339-00258-Debian-70-wheezy-64-minimal.warc
-656-8-20150617164929-00027-Debian-70-wheezy-64-minimal.warc
-640-8-20150603120254-00166-Debian-70-wheezy-64-minimal.warc
-173-5-20150324143520-00070-Debian-70-wheezy-64-minimal.warc
 215-5-20150630164349-00123-Debian-70-wheezy-64-minimal.warc
 11-2-20140915111047-00204-Debian-70-wheezy-64-minimal.warc
 634-8-20150528115823-00230-Debian-70-wheezy-64-minimal.warc
