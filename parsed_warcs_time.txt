@@ -12,3 +12,15 @@
 2:05:34
 Command exited with non-zero status 130
 29:22.72
+Command exited with non-zero status 130
+0:02.98
+Command exited with non-zero status 130
+0:00.61
+Command exited with non-zero status 130
+0:26.11
+Command exited with non-zero status 130
+0:33.50
+Command exited with non-zero status 255
+0:03.10
+Command exited with non-zero status 130
+32:35.61

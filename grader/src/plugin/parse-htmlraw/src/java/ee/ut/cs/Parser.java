@@ -90,12 +90,12 @@ public class Parser {
 		//<-----------------------------------------------<
 	}
 
-	public HashMap<String, String> pa11y(String fileAddress, String warc, String url) throws IOException, JSONException {
+	public HashMap<String, String> pa11y(String fileAddress, String warc, String url, String std) throws IOException, JSONException {
 
 		/*
 		 * Run process and read output
 		 */
-		Process process = new ProcessBuilder("timeout", "30", "pa11y", "-r", "json", "file://" + fileAddress).start();
+		Process process = new ProcessBuilder("timeout", "30", "pa11y", "-s", "WCAG2" + std, "-r", "json", "file://" + fileAddress).start();
 		InputStream is = process.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
@@ -187,7 +187,7 @@ public class Parser {
 		ArrayList<String> errors = new ArrayList<String>();
 		while (it.hasNext()) {
 			String next = it.next().toString();
-			//System.out.println(parse(next));
+			System.out.println("Error: " + std + parse(next));
 			returned.put(parse(next), "ERROR");
 			errors.add(parse(next));
 		}
@@ -195,7 +195,7 @@ public class Parser {
 		
 		//System.out.println("Warnings : " + j);
 		//System.out.println("Of those, unique count: " + uniqueWarn.size());
-	
+		
 		
 		//Iterate over unique warnings
 		it = uniqueWarn.iterator();
@@ -207,7 +207,7 @@ public class Parser {
 			if (!returned.containsKey(next))
 				returned.put(parse(next), "WARNING");
 			
-			//System.out.println(parse(next));
+			System.out.println("Warning: " + std + parse(next));
 			warnings.add(parse(next));
 		}
 		

@@ -114,9 +114,12 @@ public class HtmlRawParser implements HtmlParseFilter {
 			else
 				System.out.println("upload failed");;
 		} else if (grader.equals("HTML")) {
-			HashMap<String, String> array = p.pa11y(f.getAbsolutePath(), warc, domUrl.getHost()+domUrl.getFile());
-			if (array != null)
-				sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
+			String[] standards = {"A", "AA", "AAA"};
+			for (String std : standards) {
+				HashMap<String, String> array = p.pa11y(f.getAbsolutePath(), warc, domUrl.getHost()+domUrl.getFile(), std);
+				if (array != null)
+					sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
+			}
 				//if (sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile()) == true)
 				//	System.out.println("upload successful");
 				//else
