@@ -187,7 +187,7 @@ public class Parser {
 		ArrayList<String> errors = new ArrayList<String>();
 		while (it.hasNext()) {
 			String next = it.next().toString();
-			System.out.println("Error: " + std + parse(next));
+			//System.out.println("Error: " + std + parse(next));
 			returned.put(parse(next), "ERROR");
 			errors.add(parse(next));
 		}
@@ -207,7 +207,7 @@ public class Parser {
 			if (!returned.containsKey(next))
 				returned.put(parse(next), "WARNING");
 			
-			System.out.println("Warning: " + std + parse(next));
+			//System.out.println("Warning: " + std + parse(next));
 			warnings.add(parse(next));
 		}
 		

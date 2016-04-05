@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#cd /home/jaan/Dropbox/Ülikool/Baka/java/nutchwax-0.13/
+cd grader
 echo "Building nutchWAX:"
+
 ant
 #mkdir plugins
 rm -dr plugins/parse-htmlraw/

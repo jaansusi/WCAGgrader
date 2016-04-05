@@ -13,8 +13,8 @@ import java.lang.Error;
 public class Uploader {
 
 	private static String host = "jdbc:mysql://localhost:3306/mydb";
-	private static String user = "root";
-	private static String pass = "toor";
+	private static String user = "jaan";
+	private static String pass = "passwd";
 
 	public Boolean postGradesAccess(JSONObject json, String domain, String url) {
 		//If uploaded successfully, return true, otherwise false
