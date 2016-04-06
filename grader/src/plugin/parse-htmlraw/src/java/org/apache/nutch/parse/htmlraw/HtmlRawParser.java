@@ -84,7 +84,6 @@ public class HtmlRawParser implements HtmlParseFilter {
 		//System.out.println(warc);
 		br2.close();
 
-	
 		//Make a decision based on the conf file located in root folder
 		Properties prop = new Properties();
 		InputStream is = new FileInputStream("plugin-conf.cfg");

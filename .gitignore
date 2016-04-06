@@ -7,3 +7,4 @@ grader/*.log
 .metadata/
 data.csv
 *.warc
+logs/*
