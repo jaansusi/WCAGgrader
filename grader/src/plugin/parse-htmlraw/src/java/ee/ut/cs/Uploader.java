@@ -1,5 +1,6 @@
 package ee.ut.cs;
 
+
 import java.sql.*;
 import org.json.JSONObject;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.lang.String;
 import java.lang.Error;
-
+import java.lang.management.ManagementFactory;
 
 public class Uploader {
 
@@ -101,10 +102,9 @@ public class Uploader {
 			//If upload successful, return true
 			return true;
 		} catch (SQLException e) {
-		    System.out.println("SQLException: " + e.getMessage());
-		    //If error is thrown, return that upload failed
+			System.out.println("Exception: " + e.getMessage());
+			//If error is thrown, return that upload failed
 			return false;
 		}
 	}
-	
 }

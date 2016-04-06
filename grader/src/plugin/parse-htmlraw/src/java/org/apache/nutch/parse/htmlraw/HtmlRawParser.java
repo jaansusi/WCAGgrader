@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.HashMap;
 
+import java.lang.management.ManagementFactory;
 
 /** 
  * Parse raw HTML into metatag of document.
@@ -78,15 +80,27 @@ public class HtmlRawParser implements HtmlParseFilter {
 		bw.write(htmlraw);
 		bw.close();
 		fw.close();
+		String pid = ManagementFactory.getRuntimeMXBean().getName();
+		Process process = new ProcessBuilder("ps", "-o", "ppid=", "-p", pid.split("@")[0]).start();
+                InputStream is = process.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(isr);
+	        String ppid = br.readLine();
+		ppid = ppid.replace(" ", "");
+		process = new ProcessBuilder("ps", "-o", "ppid=", "-p", ppid).start();
+		String pppid = br.readLine();
+		System.out.println("java finds pid = '" + pid + "'");
+		System.out.println("java finds ppid = '" + ppid + "'");
+		System.out.println("java finds pppid = '" + pppid + "'");
+		//BufferedReader br2 = new BufferedReader(new FileReader("./" + ppid + ".txt"));
 		
-		BufferedReader br2 = new BufferedReader(new FileReader("./cur_warc.txt"));
-		String warc = br2.readLine();
+		//String warc = br2.readLine();
 		//System.out.println(warc);
-		br2.close();
+		//br2.close();
 
 		//Make a decision based on the conf file located in root folder
 		Properties prop = new Properties();
-		InputStream is = new FileInputStream("plugin-conf.cfg");
+		is = new FileInputStream("plugin-conf.cfg");
 		prop.load(is);
 		String grader = prop.getProperty("GRADER");
 		is.close();
@@ -129,7 +143,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 //			System.out.println("\t and file deleted.");
 //		else System.out.println("\t but file not deleted.");
 	} catch (FileNotFoundException e) {
-		e.printStackTrace();
+		System.out.println(e.getMessage());
 	} catch (UnsupportedEncodingException e) {
 		e.printStackTrace();
 	} catch (IOException e) {
