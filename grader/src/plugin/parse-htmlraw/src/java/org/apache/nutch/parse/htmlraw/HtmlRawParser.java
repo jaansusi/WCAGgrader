@@ -92,9 +92,9 @@ public class HtmlRawParser implements HtmlParseFilter {
 		System.out.println("java finds pid = '" + pid + "'");
 		System.out.println("java finds ppid = '" + ppid + "'");
 		System.out.println("java finds pppid = '" + pppid + "'");
-		//BufferedReader br2 = new BufferedReader(new FileReader("./" + ppid + ".txt"));
+		BufferedReader br2 = new BufferedReader(new FileReader("./" + ppid + ".txt"));
 		
-		//String warc = br2.readLine();
+		String warc = br2.readLine();
 		//System.out.println(warc);
 		//br2.close();
 

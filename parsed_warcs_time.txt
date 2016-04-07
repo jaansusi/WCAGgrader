@@ -48,3 +48,24 @@
 2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:00.01
 2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:04.71
 2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:13.67
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:03.00
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:00.00
+0:03.99
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:00.00
+0:04.03
+0:33.49
+0:13.57
+0:26.70
+0:12.84
+0:10.19
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:00.42
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:32.10
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:32.10
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:31.07
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:30.19
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:30.08
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:31.04
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:06.74
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:03.54
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -0:06.20
+2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -2-2-20140502013100-00155-Debian-70-wheezy-64-minimal.warc -

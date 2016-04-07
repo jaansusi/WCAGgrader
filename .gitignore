@@ -8,3 +8,4 @@ grader/*.log
 data.csv
 *.warc
 logs/*
+grader/[0-9]*.txt
