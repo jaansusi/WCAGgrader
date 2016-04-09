@@ -74,37 +74,66 @@ public class HtmlRawParser implements HtmlParseFilter {
 		} while (new File("TempFile-" + rand + ".html").exists());
 		File f = new File("TempFile-" + rand + ".html");
 		//System.out.println(f.getAbsolutePath() + " created");
-
+		
+		//Write to a TempFile
 		FileWriter fw = new FileWriter(f.getAbsolutePath());
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(htmlraw);
 		bw.close();
 		fw.close();
+		
+		//Java VM process id
 		String pid = ManagementFactory.getRuntimeMXBean().getName();
+		
+		//nutchWAX process id
 		Process process = new ProcessBuilder("ps", "-o", "ppid=", "-p", pid.split("@")[0]).start();
                 InputStream is = process.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 BufferedReader br = new BufferedReader(isr);
 	        String ppid = br.readLine();
 		ppid = ppid.replace(" ", "");
+		
+		//time process id
 		process = new ProcessBuilder("ps", "-o", "ppid=", "-p", ppid).start();
+		is = process.getInputStream();
+		isr = new InputStreamReader(is);
+		br = new BufferedReader(isr);
 		String pppid = br.readLine();
+		pppid = pppid.replace(" ", "");
+		
+		//run.sh process id
+		process = new ProcessBuilder("ps", "-o", "ppid=", "-p", pppid).start();
+		is = process.getInputStream();
+		isr = new InputStreamReader(is);
+		br = new BufferedReader(isr);
+		String ppppid = br.readLine();
+		ppppid = ppppid.replace(" ", "");
+		/*
 		System.out.println("java finds pid = '" + pid + "'");
 		System.out.println("java finds ppid = '" + ppid + "'");
 		System.out.println("java finds pppid = '" + pppid + "'");
-		BufferedReader br2 = new BufferedReader(new FileReader("./" + ppid + ".txt"));
+		*/
+		System.out.println("java finds ppppid = '" + ppppid + "'");
 		
+		BufferedReader br2 = new BufferedReader(new FileReader("./" + ppppid + ".txt"));
+		
+		//Read the warc name
 		String warc = br2.readLine();
-		//System.out.println(warc);
-		//br2.close();
+		//Warc creation date
+		String date = warc.substring(4,12);
+		System.out.println(warc);
+		date = date.substring(0,4) + "-" + date.substring(4,6) + "-" + date.substring(6,7);
+		System.out.println(date);
+		br2.close();
 
 		//Make a decision based on the conf file located in root folder
 		Properties prop = new Properties();
 		is = new FileInputStream("plugin-conf.cfg");
 		prop.load(is);
 		String grader = prop.getProperty("GRADER");
+		br.close();
 		is.close();
-
+		isr.close();
 		/*
 		 * Audit
 		 */
@@ -130,6 +159,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 			String[] standards = {"A", "AA", "AAA"};
 			for (String std : standards) {
 				HashMap<String, String> array = p.pa11y(f.getAbsolutePath(), warc, domUrl.getHost()+domUrl.getFile(), std);
+				array.put("warcDate", date);
 				if (array != null)
 					sql.postGradesCodeSniffer(array, domUrl.getHost(), domUrl.getFile());
 			}
@@ -152,7 +182,7 @@ public class HtmlRawParser implements HtmlParseFilter {
 		e.printStackTrace();
 	}
 	
-	System.out.print(".");
+	//System.out.print(".");
     return parseResult;
   }
 }
